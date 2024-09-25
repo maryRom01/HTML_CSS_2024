@@ -93,6 +93,7 @@ h1 {
 
 .main__product__img {
   height: 65%;
+  max-width: 100%;
   display: inline-block;
   padding-bottom: 16px;
 }
