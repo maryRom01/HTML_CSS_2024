@@ -85,6 +85,7 @@ h1 {
   border: 1px solid #A8A8A8;
   background-color: #F8FDFE;
   text-align: center;
+  position: relative;
 }
 
 .main__product:first-child {
@@ -126,6 +127,15 @@ h1 {
   margin-bottom: 16px;
 }
 
+.main__product__old__price {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  padding-left: 21px;
+  color: #8E8E8E;
+  text-decoration: line-through;
+}
+
 .main__product__link {
   display: inline-block;
   width: 100%;
@@ -136,6 +146,10 @@ h1 {
   line-height: 1.5;
   padding: 8px 0;
   position: relative;
+}
+
+.main__product__link::before {
+  content: "Add to basket";
 }
 
 .main__product__link:hover {
@@ -160,4 +174,36 @@ h1 {
   position: absolute;
   top: auto;
   z-index: 1;
+}
+
+.badge__new {
+  background-color: #af39e7;
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #F8FDFE;
+  position: absolute;
+  top: auto;
+  z-index: 1;
+}
+
+.badge__off {
+  background-color: #EA33C0;
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1.5;
+  color: #F8FDFE;
+  position: absolute;
+  top: auto;
+  z-index: 1;
+}
+
+.badge_left {
+  left: auto;
+}
+
+.badge_right {
+  left: 70px;
 }
