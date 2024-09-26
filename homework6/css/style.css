@@ -135,6 +135,19 @@ h1 {
   background-color: #4C394E;
   line-height: 1.5;
   padding: 8px 0;
+  position: relative;
+}
+
+.main__product__link:hover {
+  background-color: #4D762D;
+  color: transparent;
+}
+
+.main__product__link:hover::after {
+  content: "End up";
+  position: absolute;
+  color: #F8FDFE;;
+  left: 45%;
 }
 
 .badge__hit {
