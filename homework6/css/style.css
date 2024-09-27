@@ -42,9 +42,23 @@ header {
 }
 
 .cart {
+  position: relative;
   width: 40px;
   height: 40px;
   background: url("../images/cart_icon.png") no-repeat center/cover;
+}
+
+.cart::after {
+  content: ''; /* Required for pseudo-element */
+  position: absolute; /* Position it over the image */
+  top: 41%; /* Position it at the center vertically */
+  left: 59%; /* Position it at the center horizontally */
+  width: 10px; /* Width of the overlay */
+  height: 12px; /* Height of the overlay */
+  background-color: #F8FDFE; /* Match this color to the background */
+  border-radius: 50%; 
+  transform: translate(-50%, -50%); /* Center the overlay */
+  pointer-events: none; /* Ensure the overlay does not capture mouse events */
 }
 
 main {
