@@ -214,3 +214,18 @@ h1 {
 .badge_right_2 {
   left: 82px;
 }
+
+footer {
+  height: 88px;
+  background-color: #4C394E;
+  color: #F8FDFE;
+}
+
+footer div {
+  justify-content: space-between;
+}
+
+footer div p {
+  line-height: 1.5;
+  margin-top: 31px
+}
