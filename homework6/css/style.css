@@ -23,9 +23,16 @@ body {
   justify-content: flex-end;
 }
 
+header {
+  position: fixed; /* Fix the header to the top */
+  top: 0; /* Position at the top of the viewport */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  z-index: 2;
+}
+
 .header__container {
   padding: 16px 52px;
-  color: white;
   align-items: center;
 }
 
@@ -38,6 +45,14 @@ body {
   width: 40px;
   height: 40px;
   background: url("../images/cart_icon.png") no-repeat center/cover;
+}
+
+main {
+  margin-top: 110px;
+}
+
+header {
+  background-color: white;
 }
 
 .main__nav {
@@ -228,4 +243,12 @@ footer div {
 footer div p {
   line-height: 1.5;
   margin-top: 31px
+}
+
+.chat__icon img {
+  background-color: #10BBD5;
+  border-radius: 64px;
+  position: fixed;
+  top: 85%;
+  right: 28px;
 }
