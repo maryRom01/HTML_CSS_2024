@@ -1,0 +1,329 @@
+@import url("reset.css");
+@import url("fonts.css");
+
+.main-color {
+  color: #3CB878;
+}
+
+.main-bgc-color {
+  background-color: #3CB878;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.white-font {
+  color: #FFFFFF;
+}
+
+.semi-white {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main-font-size {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 14px;
+}
+
+.main-font-family {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.border-rad {
+  border-radius: 4px;
+}
+
+body {
+  background: url('../images/main_background.png') no-repeat center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+header {
+  padding: 22px 79px;
+  margin-bottom: 54px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+main {
+  width: 29%;
+  height: auto;
+  padding: 31px 60px 38px 60px;
+  background-color: #FFFFFF;
+  margin-bottom: 74px;
+}
+
+/*  hover */
+
+.logo__link:hover, .text-hover-main-color:hover {
+  color: #3CB878;
+  transition: color 0.3s ease; /* Smooth transition */
+  transition-delay: 0.1s; /* Delay before transition */
+}
+
+.text-hover-secondary-color:hover {
+  color: #01813F;
+  text-decoration: underline;
+}
+
+.nav__compass:hover {
+  background: url('../images/hover/compass.svg');
+} 
+
+.nav__envelop:hover {
+  background: url('../images/hover/envelop.svg');
+}
+
+.nav__calendar:hover {
+  background: url('../images/hover/calendar.svg');
+}
+
+#create-account-btn:hover {
+  background-color: #01813F;
+  transition: background-color 0.4s ease; 
+  transition-delay: 0.3s; 
+}
+
+.facebook-btn:hover {
+  background-color: #022263;
+  transition: background-color 0.4s ease; 
+  transition-delay: 0.2s; 
+}
+
+.google-btn:hover {
+  background-color: #AB1F09;
+  transition: background-color 0.4s ease; 
+  transition-delay: 0.2s; 
+}
+
+/* ------------------- */
+
+.logo__link {
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header__welcome {
+  margin-left: 27px;
+}
+
+.header__divider {
+  margin-left: 24px;
+}
+
+.nav__icon {
+  display: inline-block;
+}
+
+
+.nav__compass {
+  background: url('../images/Vector.svg');
+  margin-left: 24px;
+  width: 23px;
+  height: 23.5px;
+} 
+
+.nav__envelop {
+  background: url('../images/envelope-open-regular\ 1.svg');
+  margin-left: 27px;
+  width: 23px;
+  height: 23px;
+}
+
+.nav__calendar {
+  background: url('../images/calendar-alt-regular\ 2.svg');
+  width: 21px;
+  height: 24px;
+}
+
+.decor {
+  background-color: #3CB878;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: calc((100% - 29%) / 2); /* 100% - max width of main and / 2*/
+}
+
+main h2 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.main__page-sign {
+  margin-bottom: 15px;
+}
+
+.main__social-media-icon {
+  width: 48%;
+  display: inline-block;
+  text-align: center;
+  padding: 17px 22px 17px 67px;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 34px;
+}
+
+.facebook-btn {
+  background: url('../images/social_media/F.svg') no-repeat 10% 50%;
+  border: 1px solid #305DB8;
+  background-color: #305DB8;
+}
+
+.google-btn {
+  background: url('../images/social_media/G+.svg') no-repeat 10% 50%;
+  border: 1px solid #DF4A32;
+  background-color: #DF4A32;
+}
+
+.main__divider {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #F2F2F2;
+  line-height: 0.1em;
+  margin: 0 0 16px 0; 
+}
+
+.main__divider span {
+  background:#fff; 
+  color: #848484;
+}
+
+.main__form {
+  width: 100%;
+  margin: 0;
+}
+
+.main__form label {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+label.checkbox-label {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label.checkbox-label * {
+  cursor: pointer;
+}
+
+.main__form-input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #F2F2F2;
+}
+
+.checkbox-label {
+  display: inline-block;
+  position: relative;
+  user-select: none;
+}
+
+/* to make the checkmark visible when checked */
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+ } 
+
+ .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #F2F2F2;
+  background-color: white;
+} 
+
+/* to target the added content after the checkmark element */
+.checkbox-label .checkmark:after {
+  top: 0;
+  left: 2px;
+  color: #3CB878;
+}
+
+.main__form-checkbox {
+  margin-right: 8px; /* Adjust the space as needed */
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  line-height: 14px;
+  letter-spacing: 1px;
+}
+
+/* to hide the checkmark when not checked */
+.checkmark:after {
+  content:'✓';
+  position: absolute;
+  display: none;
+ } 
+
+.main__form-input {
+  color: #434343;
+  padding-left: 20px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+::placeholder {
+  color: #bebebe;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#create-account-btn {
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 1px;
+}
+
+.main__form-input:focus {
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.21);
+  outline: none; /* Remove default outline */
+  padding-left: 20px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.main__form-input:focus::placeholder {
+  color: transparent;
+}
+
+input[type="checkbox"]:checked + .checkbox-label:after {
+  content: "✓"; /* Checkmark */
+  position: absolute; 
+  font-size: 20px; /* Checkmark size */
+}
+

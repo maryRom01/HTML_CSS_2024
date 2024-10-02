@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="flex-container flex-row space-between white-font">
+            <a href="#" target="_top" class="logo__link">Journey</a>
+            <div class="flex-container flex-row">
+                <ul class="flex-container flex-row nav__icon-list">
+                    <li><a class="nav__icon nav__calendar" href="#" target="_top"></a></li>
+                    <li><a class="nav__icon nav__envelop" href="#" target="_top"></a></li>
+                    <li><a class="nav__icon nav__compass" href="#" target="_top"></a></li>
+                </ul>
+                <p class="header__divider semi-white">|</p>
+                <p class="header__welcome semi-white">
+                    Welcome, <span class="text-hover-main-color"><a href="#" target="_top">Log In</a></span> or <span class="text-hover-main-color"><a href="#" target="_top">Sign Up</a></span>
+                </p>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <p class="decor main-bgc-color"></p>
+        <div class="flex-container flex-row space-between main__page-sign">
+            <h2>Sign Up</h2>
+            <a class="main-color">Log In</a>
+        </div>
+        <div class="flex-container flex-row space-between main__social-media-icon-list">
+            <a href="https://www.facebook.com/" target="_blank" class="main__social-media-icon facebook-btn border-rad">Facebook</a>
+            <a href="https://www.google.com/intl/en-GB/account/about/" target="_blank" class="main__social-media-icon google-btn border-rad">Google</a>
+        </div>
+        <p class="main__divider"><span>or</span></p>
+        <div>
+            <form action="" method="post" class="flex-container flex-column main__form">
+                <label><input type="text" class="main__form-input border-rad main-font-family" placeholder="First Name"></label>
+                <label><input type="text" class="main__form-input border-rad main-font-family" placeholder="Last Name"></label>
+                <label><input type="email" class="main__form-input border-rad main-font-family" placeholder="Email"></label>
+                <label><input type="password" class="main__form-input border-rad main-font-family" placeholder="Choose Password"></label>
+                <label><input type="password" class="main__form-input border-rad main-font-family" placeholder="Confirm Password"></label>
+                <label for="main__form-checkbox" class="checkbox-label main__form-checkbox-text">
+                    <input type="checkbox" class="main__form-checkbox main-font-family" id="main__form-checkbox">
+                    <span class="checkmark"></span>
+                    Agree with our <span class="main-color text-hover-secondary-color">Terms & Conditions</span>
+                </label>
+                <input type="button" id="create-account-btn" value="Create Account" class="white-font main-bgc-color border-rad main-font-family">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
