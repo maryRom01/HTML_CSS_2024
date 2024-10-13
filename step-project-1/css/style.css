@@ -20,6 +20,10 @@
   font-family: var(--main-font);
 }
 
+header.container {
+  margin-bottom: 31px;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -600,8 +604,8 @@ input::placeholder, textarea::placeholder {
 }
 
 .footer__nav {
-  height: 249px;
-  padding: 44px 36px;
+  height: auto;
+  padding: 44px 0;
 }
 
 .footer__nav-logo {
