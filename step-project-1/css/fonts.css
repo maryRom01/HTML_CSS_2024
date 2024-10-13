@@ -1,0 +1,10 @@
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-Medium.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

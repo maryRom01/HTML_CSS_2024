@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="container">
+        <nav class="header__nav">
+            <ul class="header__nav-list flex-container-row space-between">
+                <li class="header__nav-list-item header__nav-logo"><a href="#" target="_top">e-Tutoria</a></li>
+                <li class="header__nav-list-item header__nav-dropdown">
+                    <button class="custom-btn explore-btn">Explore</button> 
+                    <div id="open-modal" class="modal">
+                        <div class="modal-content">
+                            <a href="#courses" target="_top">Courses</a>
+                            <a href="#sales" target="_top">Corporate training</a>
+                            <div class="divider"></div>
+                            <h5>Goals</h5>
+                            <a href="#" target="_top">Take a free course</a>
+                            <a href="#" target="_top">Get a diploma</a>
+                            <a href="#" target="_top">Get a certificate</a>
+                            <a href="#" target="_top">Get a new profession</a>
+                            <h5>Themes</h5>
+                            <a href="#" target="_top">Data science</a>
+                            <a href="#" target="_top">Business</a>
+                            <a href="#" target="_top">Computer science</a>
+                            <a href="#" target="_top">Information Technology</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="header__nav-list-item header__nav-list-item-search">
+                    <form action="#" method="GET" class="header__nav-form-search flex-container-row space-between">
+                        <input type="search" placeholder="What do you want to learn?" name="query" class="header__nav-form-placeholder"/>
+                        <button type="submit" class="header__nav-search-btn"></button>
+                    </form>
+                </li>
+                <li class="header__nav-list-item"><a href="#" target="_top">Courses</a></li>
+                <li class="header__nav-list-item"><a href="#" target="_top">Corporate training</a></li>
+                <li class="header__nav-list-item"><a href="#" target="_top" class="primary-color-text">Log in</a></li>
+                <li class="header__nav-list-item">
+                    <a href="#" target="_top">
+                        <button class="custom-btn">Sign up</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="main__learn container">
+            <div class="main__learn-content">
+                <h1>Learn comfortably</h1>
+                <p class="main__learn-content-text">Unlimited access to 700+ courses, hands-on projects, and certifications in job-critical skills in one subscription</p>
+                <nav class="main__learn__nav">
+                    <ul class="main__learn__nav-list flex-container-row">
+                        <li><a href="#choose" target="_top" class="custom-btn">Start learning</a></li>
+                        <li><a href="#" target="_top" class="primary-color-text">Learn more</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main__learn-img"></div>
+        </article>
+        <article class="main__academic-training  container">
+            <h3>Academic training</h3>
+            <h2 id="choose">Choose the best program for you</h2>
+            <p>An incredible opportunity to gain academic knowledge and skilss online</p>
+            <div class="main__cards__container flex-container-row">
+                <div class="main__cards-card">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__cards-card-img-1"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/dan-logo 1.svg" alt="logo">
+                                <h4 class="main__cards-card-title">DAN.IT Education</h4>
+                            </div>
+                            <p class="main__cards-card-description">High-quality Israeli IT education</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text">
+                                <div class="main__cards-card-sub-container cursor-pointer">
+                                    <img src="./images/main__academic-training/hat/hat.svg" class="main__cards-card-training-img" alt="link-image">
+                                    Get a diploma
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="main__cards-card">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__cards-card-img-2"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/eu_logo.svg" alt="logo">
+                                <h4 class="main__cards-card-title">European University</h4>
+                            </div>
+                            <p class="main__cards-card-description">121 "Software engineering"</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text">
+                                <div class="main__cards-card-sub-container cursor-pointer">
+                                    <img src="./images/main__academic-training/hat/hat.svg" class="main__cards-card-training-img" alt="link-image">
+                                    Get a diploma
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="main__cards-card">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__cards-card-img-3"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/logo-prjctr.svg" alt="logo">
+                                <h4 class="main__cards-card-title">Projector - Creative & Tech Online Institute</h4>
+                            </div>
+                            <p class="main__cards-card-description">Education that is relevant today and valuable tomorrow</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text">
+                                <div class="main__cards-card-sub-container cursor-pointer">
+                                    <img src="./images/main__academic-training/hat/hat.svg" class="main__cards-card-training-img" alt="link-image">
+                                    Get a diploma
+                                </div>
+                            </a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+        <article class="main__courses  container" id="courses">
+            <h3>Courses and specializations</h3>
+            <h2>Popular courses on our platform</h2>
+            <p>Choose from more than 700 courses on topics such as business analytics, graphic design, Python, and more.</p>
+            <div class="main__cards__container flex-container-row">
+                <div class="main__cards-card-2">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__courses-card-img-1"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/dan-logo 1.svg" alt="logo">
+                                <h4 class="main__cards-card-title">DAN.IT Education</h4>
+                            </div>
+                            <p class="main__cards-card-description">UI/UX Design</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text main__cards-card-sub-container">
+                                Course
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="main__cards-card-2">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__courses-card-img-2"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/dan-logo 1.svg" alt="logo">
+                                <h4 class="main__cards-card-title">DAN.IT Education</h4>
+                            </div>
+                            <p class="main__cards-card-description">Full Stack Developer (JavaScript + Java)</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text main__cards-card-sub-container">
+                                Course
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="main__cards-card-2">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__courses-card-img-3"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/dan-logo 1.svg" alt="logo">
+                                <h4 class="main__cards-card-title">DAN.IT Education</h4>
+                            </div>
+                            <p class="main__cards-card-description">Quality Assurance (QA)</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text main__cards-card-sub-container">
+                                Course
+                            </a>
+                        </div>
+                    </a>
+                </div>
+                <div class="main__cards-card-2">
+                    <a href="#" target="_top">
+                        <div class="main__cards-card-img main__courses-card-img-4"></div>
+                        <div class="main__cards-card-content">
+                            <div class="main__cards-card-sub-container">
+                                <img src="./images/main__academic-training/logo/dan-logo 1.svg" alt="logo">
+                                <h4 class="main__cards-card-title">DAN.IT Education</h4>
+                            </div>
+                            <p class="main__cards-card-description">SMM & Content marketing</p>
+                            <a href="#" target="_top" class="main__cards-card-link primary-color-text main__cards-card-sub-container">
+                                    Course
+                            </a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="main__courses-container">
+                <a href="#" target="_top" class="main__courses-link-more mt-40 primary-color-text">
+                    More courses
+                    <img src="./images/main__courses/arrow/arrow.svg" alt="arrow" class="main__courses-link-image">
+                </a>
+            </div>
+        </article>
+        <article class="main__topics  container">
+            <h2 class=" mb-40">Featured topics by category</h2>
+            <div class="grid__container__main">
+                <p class="main__cards-card-description grid__element">Design</p>
+                <p class="main__cards-card-description grid__element">IT and Software</p>
+                <p class="main__cards-card-description grid__element">Development</p>
+                <p class="main__cards-card-description grid__element">Business</p>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Figma</span>
+                    <p>10,909,736 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Ethical Hacking</span>
+                    <p>10,931,066 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Web Development</span>
+                    <p>11,415,615 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">SQL</span>
+                    <p>5,977,561 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Graphic Design</span>
+                    <p>3,381,052 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Amazon AWS</span>
+                    <p>6,123,456 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Python</span>
+                    <p>36,354,994 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Financial Analysis</span>
+                    <p>1,195,282 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Drawing</span>
+                    <p>2,410,849 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Cyber Security</span>
+                    <p>3,998,037 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">Machine Learning</span>
+                    <p>7,070,015 students</p>
+                </div>
+                <div class="grid__element grid__element-container">
+                    <span class="primary-color-text grid__element-sub-title">PMP</span>
+                    <p>1,733,398 students</p>
+                </div>
+            </div>
+            <div class="main__courses-container">
+                <a href="#" target="_top" class="main__courses-link-more mt-0 primary-color-text">
+                    More topics
+                    <img src="./images/main__courses/arrow/arrow.svg" alt="arrow" class="main__courses-link-image">
+                </a>
+            </div>
+        </article>
+        <article class="main__cooperate mb-80">
+            <h2 class="main__cooperate-title">We cooperate with more than 50 leading</h2>
+            <h2 class="main__cooperate-title main__cooperate-title-second">universities and companies</h2>
+            <img src="./images//main__cooperate/partners_icon.svg" alt="partners logo" class="main__cooperate-logo">
+        </article>
+        <article class="main__sales container flex-container-row"  id="sales">
+            <div class="main__sales-content main__sales-content-section">
+                <h2 class="main__cooperate-title">The ideal solution for your</h2>
+                <h2 class="main__cooperate-title main__cooperate-title-second">business</h2>
+                <p class="main__sales-content-text">We offer world-class training and development programs popular with leading organizations around the world. All this is on Coursera for business.</p>
+                <a href="#" target="_top" class="custom-btn main__sales-content-btn">Contact Sales</a>
+            </div>
+            <div class="main__sales-content main__sales-img"></div>
+        </article>
+        <article class="main__plans mb-80">
+            <h2 class="mb-40">Choose a plan that matches your career goal</h2>
+            <div class="main__cards__container flex-container-row">
+                <div class="main__cards-plan">
+                    <h4 class="main__cards-card-description mb-27">One training program</h4>
+                    <p class="main__cards-plan-text mb-27">Learn one topic or master a skill and get certified</p>
+                    <p class="main__cards-plan-price-content mb-27"><span class="main__cards-plan-price">49</span>/ <span class="main__cards-plan-period">mo</span></p>
+                    <a href="#" target="_top" class="custom-btn main__sales-content-btn mb-27">Get Started</a>
+                    <div class="divider"></div>
+                    <p class="main__cards-plan-details">Access all courses in the curriculum</p>  
+                    <p class="main__cards-plan-details">Receive a certigficate upon completeion</p> 
+                </div>
+                <div class="main__cards-plan">
+                    <h4 class="main__cards-card-description mb-27">e-Tutoria Plus with monthly payment</h4>
+                    <p class="main__cards-plan-text mb-27">Take several courses and get a document that confirms your qualifications in a short time</p>
+                    <p class="main__cards-plan-price-content mb-27"><span class="main__cards-plan-price">79</span>/ <span class="main__cards-plan-period">mo</span></p>
+                    <a href="#" target="_top" class="custom-btn main__sales-content-btn mb-27">Get Started</a>
+                    <div class="divider"></div>
+                    <p class="main__cards-plan-details">Access 700+ courses and specializations from over 50 leading companies and universities</p>  
+                    <p class="main__cards-plan-details">Get as many certificates as you want</p> 
+                    <p class="main__cards-plan-details">Choose from over 15 professional certification programs from industry leaders like Google, Facebook and more</p> 
+                </div>
+                <div class="main__cards-plan">
+                    <h4 class="main__cards-card-description mb-27">e-Tutoria Plus with annual payment</h4>
+                    <p class="main__cards-plan-text mb-27">Convenient schedule, savings and long-term learning goals</p>
+                    <p class="main__cards-plan-price-content mb-27"><span class="main__cards-plan-price">399</span>/ <span class="main__cards-plan-period">Y</span></p>
+                    <a href="#" target="_top" class="custom-btn main__sales-content-btn mb-27">Get Started</a>
+                    <div class="divider"></div>
+                    <p class="main__cards-plan-details">Everything included in the monthly billing plan</p>  
+                    <p class="main__cards-plan-details">Save when paying in advance for a year</p> 
+                    <p class="main__cards-plan-details">Learn at your own pace while maintaining work-life balance</p> 
+                </div>
+            </div>
+        </article>
+        <article class="main__students container" >
+            <h2 class="mb-40">Photos of our students</h2>
+            <div class="photo-gallery">
+                <div class="photo photo1"><img src="./images/main__students/students-1.svg" alt="Student 1"></div>
+                <div class="photo photo2"><img src="./images/main__students/students-9.svg" alt="Student 2"></div>
+                <div class="photo photo3"><img src="./images/main__students/students-8.svg" alt="Student 3"></div>
+                <div class="photo photo4"><img src="./images/main__students/students-3.svg" alt="Student 4"></div>
+                <div class="photo photo5"><img src="./images/main__students/students-4.svg" alt="Student 5"></div>
+                <div class="photo photo6"><img src="./images/main__students/students-2.svg" alt="Student 6"></div>
+                <div class="photo photo7"><img src="./images/main__students/students-7.svg" alt="Student 7"></div>
+                <div class="photo photo8"><img src="./images/main__students/students-5.svg" alt="Student 8"></div>
+                <div class="photo photo9"><img src="./images/main__students/students-6.svg" alt="Student 9"></div>
+            </div>
+        </article>
+        <article class="main__contact-us">
+            <form class="contact">
+                <h2>Contact Us</h2>
+                <p class="contact__subtitle">Have questions? The quickest way to get in touch with us is using the contact information below.</p>
+                <label for="name" class="contact__label">
+                    <p class="contact__label-text">Name</p>
+                    <input type="text" required name="name" id="name" class="contact__field" placeholder="Enter your name">
+                </label>
+                <label for="email" class="contact__label">
+                    <p class="contact__label-text">Email address</p>
+                    <input type="email" required name="email" id="email" class="contact__field" placeholder="Enter your email">
+                </label>
+                <label class="contact__label">
+                    <p class="contact__label-text">Your message</p>
+                    <textarea placeholder="Enter your message" rows="5"></textarea>
+                </label>
+                <button type="submit" class="contact__submit custom-btn">Send</button>
+            </form>
+        </article>
+    </main>
+    <footer class="container">
+        <nav class="footer__nav">
+            <div class="footer__nav-item flex-container-row space-between">
+                <a href="#" target="_top" class="footer__nav-logo">e-Tutoria</a>
+                <ul class="footer__nav-item flex-container-row">
+                    <li><a class="nav__icon nav__instagram" href="https://www.instagram.com/accounts/login/" target="_top"></a></li>
+                    <li><a class="nav__icon nav__facebook" href="https://www.facebook.com/login.php/" target="_top"></a></li>
+                    <li><a class="nav__icon nav__linkedin" href="https://www.linkedin.com/login" target="_top"></a></li>
+                </ul>
+            </div>
+            <div class="footer__nav-item flex-container-row space-between">    
+                <p class="footer__nav-logo-text">e-Tutoria is the global online learning platform that offers anyone, anywhere access to online courses</p>
+                <p>&#169; 2023 e-Tutoria Inc. All rights reserved</p>
+            </div>
+            
+
+        </nav>
+    </footer>
+</body>
+</html>
