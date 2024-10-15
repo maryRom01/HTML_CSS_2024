@@ -1,0 +1,24 @@
+{
+  "name": "homework_1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "html": "gulp html",
+    "styles": "gulp styles",
+    "dev": "gulp dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "browserslist": "^4.24.0",
+    "gulp-autoprefixer": "^9.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-csso": "^4.0.1"
+  },
+  "type": "module",
+  "browserslist": ["last 2 versions, not dead, > 0.2%"]
+}
