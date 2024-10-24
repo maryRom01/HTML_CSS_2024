@@ -15,7 +15,7 @@ body {
   text-transform: uppercase;
 }
 
-.rectangle {
+.wrapper {
   width: 200px;
   height: 200px;
   border: 8px solid gold;
@@ -24,7 +24,7 @@ body {
   position: relative;
 }
 
-.rectangle:after {
+.wrapper:after {
   content:'';
   position: absolute;
   width: 40px;
