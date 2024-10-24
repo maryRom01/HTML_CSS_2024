@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
-  background: rgba(0, 0, 0, 0.98);
+  background: rgba(0, 0, 0, 0.96);
   font-size: 10vw;
   font-weight: bold;
   text-transform: uppercase;
@@ -17,22 +17,21 @@ body {
 
 .letter {
   display: inline-block;
-  /* color: transparent; */
-  text-shadow: 0px 2px 4px gold;
+  text-shadow: 0px 2px 4px rgba(158, 140, 37, 0.95); 
   animation-duration: 3s;
   animation-iteration-count: infinite;
 }
 
 .letter:nth-child(even) {
-  animation-name: disappearleft;
+  animation-name: left;
 }
 
 .letter:nth-child(odd) {
-  animation-name: disappearright;
+  animation-name: right;
 }
 
 .letter:nth-child(2) {
-  animation-name: disappearright;
+  animation-name: right;
   animation-delay: 0.2s;
 }
 
@@ -49,7 +48,7 @@ body {
 }
 
 .letter:nth-child(6) {
-  animation-name: disappearleft;
+  animation-name: left;
   animation-delay: 1s;
 }
 
@@ -58,21 +57,21 @@ body {
 }
 
 .letter:nth-child(8) {
-  animation-name: disappearright;
+  animation-name: right;
   animation-delay: 1.5s;
 }
 
 .letter:nth-child(9) {
-  animation-name: disappearleft;
+  animation-name: left;
   animation-delay: 1.6s;
 }
 
 .letter:nth-child(10) {
-  animation-name: disappearleft;
+  animation-name: left;
   animation-delay: 1.8s;
 }
 
-@keyframes disappearleft {
+@keyframes left {
   50% {
         transform: skew(40deg) translateY(-150%);
         text-shadow: 0px 0px 50px;
@@ -80,7 +79,7 @@ body {
       }
 }
 
-@keyframes disappearright {
+@keyframes right {
   50% {
         transform: skew(-40deg) translateY(-150%);
         text-shadow: 0px 0px 50px;
