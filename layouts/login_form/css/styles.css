@@ -1,2 +1,23 @@
+:root {
+    --body-bcg: #c1bdba;
+    --form-bcg: rgba(19, 35, 47, 0.8);
+    --main: #1ab188;
+}
+
+body {
+    background: var(--body-bcg);
+}
+
+.wrapper {
+    width: 30vw;
+    height: 80vh;
+    margin: 30px auto;
+    padding: 30px;
+    background: var(--form-bcg);
+}
+
+.hint {
+    display: none;
+}
 
 

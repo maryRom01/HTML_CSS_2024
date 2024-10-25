@@ -8,6 +8,41 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="wrapper">
+
+    <div id="loginForm">
+      <nav class="nav__group">
+        <button onclick="showSignup()">Sign up</button>
+        <button onclick="showLogin()">Log in</button>
+      </nav>
+      <h3>Welcome back!</h3>
+      <input type="email" placeholder="Email address">
+      <input type="password" placeholder="Password">
+      <a href="" target="_blank">Forgot password?</a>
+      <button class="login" onclick="login()">Log in</button>
+    </div>
   
+    <div id="signupForm" style="display: none;">
+      <nav class="nav__group">
+        <button onclick="showSignup()">Sign up</button>
+        <button onclick="showLogin()">Log in</button>
+      </nav>
+      <h3>Sign up for free</h3>
+      <input type="text" placeholder="First name">
+      <input type="text" placeholder="Last name">
+      <input type="email" placeholder="Email address">
+      <input type="password" id="password" placeholder="Set a password" name="password">
+      <div id="passwordHint" class="hint">
+        <ul class="passwordHintList">
+          <li class="passwordHintItem">8 characters (min)</li>
+          <li class="passwordHintItem">1 uppercase character</li>
+          <li class="passwordHintItem">1 lowercase character</li>
+          <li class="passwordHintItem">1 special character</li>
+        </ul>
+      </div>
+      <button class="signup" onclick="signup()">Get started</button>
+    </div>
+
+  </div>
 </body>
 </html>
