@@ -12,8 +12,8 @@
 
     <div id="loginForm">
       <nav class="nav__group">
-        <button onclick="showSignup()">Sign up</button>
-        <button onclick="showLogin()">Log in</button>
+        <button class="btn-50 signup-btn btn-inactive" onclick="showSignup()">Sign up</button>
+        <button class="btn-50 login-btn btn-active" onclick="showLogin()">Log in</button>
       </nav>
       <h3>Welcome back!</h3>
       <input type="email" placeholder="Email address">
@@ -24,8 +24,8 @@
   
     <div id="signupForm" style="display: none;">
       <nav class="nav__group">
-        <button onclick="showSignup()">Sign up</button>
-        <button onclick="showLogin()">Log in</button>
+        <button class="btn-50 signup-btn btn-active" onclick="showSignup()">Sign up</button>
+        <button class="btn-50 login-btn btn-inactive" onclick="showLogin()">Log in</button>
       </nav>
       <h3>Sign up for free</h3>
       <input type="text" placeholder="First name">

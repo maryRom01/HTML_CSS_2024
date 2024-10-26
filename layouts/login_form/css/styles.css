@@ -1,7 +1,18 @@
+@import url("reset.css");
+@import url("fonts.css");
+
 :root {
     --body-bcg: #c1bdba;
-    --form-bcg: rgba(19, 35, 47, 0.8);
+    --form-bcg: rgba(19, 35, 47, 0.9);
+    --form-bcg-shadow: rgba(19, 35, 47, 0.5);
     --main: #1ab188;
+    --grey: rgba(160, 179, 176, 0.25);
+    --grey-2: #a0b3b040;
+    --light-grey: rgba(160, 179, 201, 0.8);
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 
 body {
@@ -9,15 +20,49 @@ body {
 }
 
 .wrapper {
-    width: 30vw;
-    height: 80vh;
-    margin: 30px auto;
-    padding: 30px;
+    max-width: 600px;
+    height: 90vh;
+    margin: 40px auto;
+    padding: 40px;
     background: var(--form-bcg);
+    box-shadow: 0 4px 10px 4px var(--form-bcg-shadow);
+    border-radius: 4px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .hint {
     display: none;
 }
+
+.btn-50 {
+    display: inline-block;
+    width: 49%;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 14px;
+    font-family: 'Titillium Web', sans-serif;
+    transition:.5s ease;
+    &:hover {
+        color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(26, 177, 136, 0.45);
+        border-color: rgba(26, 177, 136, 0.45);
+    }
+}
+
+.btn-active {
+    color: white;
+    background-color: var(--main);
+    border-color: var(--main);
+}
+
+.btn-inactive {
+    color: #a0b3b0;
+    background-color: var(--grey-2);
+    border-color: var(--grey-2);
+}
+
 
 
