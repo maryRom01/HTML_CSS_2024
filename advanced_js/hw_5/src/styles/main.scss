@@ -1,0 +1,27 @@
+@forward './helpers/reset.scss';
+@forward './helpers/fonts.scss';
+@forward './helpers/variables.scss';
+@forward './helpers/mixins.scss'; 
+
+#root {
+    width: 600px;
+    height: 800px;
+    margin: 40px auto;
+    padding: 60px;
+}
+
+li {
+    font-size: 25px;
+    margin-bottom: 40px;
+    border: 1px solid green;
+    background-color: rgb(121, 188, 121);
+    padding: 10px;
+}
+
+li p:not(:last-of-type) {
+    margin-bottom: 20px;
+}
+
+.name {
+    font-weight: bolder;
+}
