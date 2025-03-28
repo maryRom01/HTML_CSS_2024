@@ -1,0 +1,36 @@
+.btn {
+    padding: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    border: 2px solid green;
+    margin-right: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: all 0.3s ease; 
+
+    &:hover {
+        font-size: 30px; 
+        transform: scale(1.05); 
+    }
+
+    &:active {
+        border-color: darkgreen; 
+    }
+}
+
+.default {
+    background-color: lightgreen;
+    color: black;
+    
+    &:hover {
+        background-color: rgb(5, 137, 5); 
+    }
+}
+
+.main {
+    background-color: blue;
+    color: white;
+    
+    &:hover {
+        background-color: darkblue; 
+    }
+}
