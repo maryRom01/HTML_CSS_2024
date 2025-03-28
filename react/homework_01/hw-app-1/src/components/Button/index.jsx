@@ -1,11 +1,11 @@
 import styles from './Button.module.scss';
 import PropTypes from 'prop-types';
 
-function Button({ children, onClick, type = 'default'}) {
+function Button({ children, onClick, type = 'default', classNames=''}) {
 
     return (
       <>
-        <button className={`${styles.btn} ${styles[type]}`}>{children}</button>
+        <button onClick={onClick} className={`${styles.btn} ${styles[type]} ${classNames}`}>{children}</button>
       </>
     )
   }
@@ -13,7 +13,8 @@ function Button({ children, onClick, type = 'default'}) {
 Button.PropTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(['default', 'main'])
+  type: PropTypes.oneOf(['default', 'main']),
+  classNames: PropTypes.string
 }
   
 export default Button
