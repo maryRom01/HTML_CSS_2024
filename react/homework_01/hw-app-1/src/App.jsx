@@ -1,12 +1,32 @@
 import './App.css'
-import Button from './components/Button'
+import { useState } from 'react';
+import Button from './components/Button';
+import Modal from './components/Modal';
 
 function App() {
+  const [isFirstModalOpen, setFirstModalOpen] = useState(false);
+  const [isSecondModalOpen, setSecondModalOpen] = useState(false);
+
+  const isModalOpen = isFirstModalOpen || isSecondModalOpen;
 
   return (
     <>
-      <Button type="default" onClick={() => console.log('1')} classNames='first'>Open first modal</Button>
-      <Button type="default" onClick={() => console.log('2')} classNames='second'>Open second modal</Button>
+      {!isModalOpen && (
+        <>
+          <Button type="default" onClick={() => setFirstModalOpen(true)} classNames="first">Open first modal</Button>
+          <Button type="default" onClick={() => setSecondModalOpen(true)} classNames="second">Open second modal</Button>
+        </>
+      )}
+
+      <Modal type="image" isOpen={isFirstModalOpen} onClose={() => setFirstModalOpen(false)}>
+        <h2>First Modal</h2>
+        <p>This is the first modal content.</p>
+      </Modal>
+
+      <Modal type="text" isOpen={isSecondModalOpen} onClose={() => setSecondModalOpen(false)}>
+        <h2>Second Modal</h2>
+        <p>This is the second modal content.</p>
+      </Modal>
     </>
   )
 }

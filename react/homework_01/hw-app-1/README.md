@@ -1,12 +1,34 @@
-# React + Vite
+## Завдання
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Створити новий React додаток з двома модальними вікнами.
 
-Currently, two official plugins are available:
+## Технічні вимоги:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Створити програму за допомогою create-react-app або vite.
+Створити на головній сторінці дві кнопки з текстом Open first modal та Open second modal.
+По кліку на кожну з кнопок має відкриватись відповідне модальне вікно.
+Створіть компонент Button, який повинен мати наступні props: [type, classNames, onClick, children]
+Функція при натисканні (властивість onClick)
+Компонент має бути універсальним
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Створіть компонент Modal, який у свою чергу буде складатися з наступних компонентів:
+
+ModalWrapper - для того щоб зробити тінь підкладки, повинен мати props children.
+ModalHeader - повинен мати props children
+ModalFooter - в якому можуть бути одна або дві кнопки і такі props: firstText, secondaryText, firstClick, secondaryClick
+При наявності відповідних props, ми показуємо першу або другу кнопку, або обидві
+
+
+ModalClose - хрест для закриття модального вікна, повинен мати props onClick
+ModalBody - для вмісту, який повинен приймати props children
+Сам компонент Modal - компонент врапер модального вікна, повинен мати props children.
+
+
+При відкритому модальному вікні частина сторінки поза вікном повинна бути затемнена за допомогою темного напівпрозорого фону.
+Модальне вікно має закриватися при натисканні на затемнений фон.
+Стилізувати кнопки та модальні вікна використовуючи SCSS
+Зберіть 2 варіанти модального вікна на основі компонентів Modal - ModalImage і ModalText
+
+Дизайн модального вікна дається в Figma файлі.
+Усі компоненти повинні бути створені як функціональні компоненти

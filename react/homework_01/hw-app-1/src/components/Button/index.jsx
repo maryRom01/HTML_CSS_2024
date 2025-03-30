@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 function Button({ children, onClick, type = 'default', classNames=''}) {
 
-    return (
+  return (
       <>
         <button onClick={onClick} className={`${styles.btn} ${styles[type]} ${classNames}`}>{children}</button>
       </>
     )
-  }
+}
 
 Button.PropTypes = {
   children: PropTypes.node.isRequired,
