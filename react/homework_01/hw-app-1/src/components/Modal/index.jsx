@@ -1,4 +1,5 @@
 import styles from './Modal.module.scss';
+import ModalWrapper from '../ModalWrapper';
 import PropTypes from 'prop-types';
 
 function Modal({ isOpen, onClose, type = 'text', children }) {
@@ -6,10 +7,8 @@ function Modal({ isOpen, onClose, type = 'text', children }) {
   
     return (
       <div className={styles["modal-backdrop"]} onClick={onClose}>
-        <div className={`${styles["modal-content"]} ${styles[type]}`} onClick={(e) => e.stopPropagation()}>
-          {children}
-          <button className="close-btn" onClick={onClose}>Close</button>
-        </div>
+        <ModalWrapper type={`${type}`} onClick={(e) => e.stopPropagation()}>{children}</ModalWrapper>
+        <button className="close-btn" onClick={onClose}>Close</button>
       </div>
     );
   }
