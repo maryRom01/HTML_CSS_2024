@@ -1,5 +1,27 @@
 .header {
     color: black;
-    font-size: 22px;
+    font-size: 32px;
     text-transform: capitalize;
 }
+
+.headerImg {
+    width: 376px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid grey;
+}
+
+.btnClose {
+    position: absolute;
+    top: 20px; 
+    right: 20px; 
+    background: url('../../images/product/close.png') no-repeat center center; 
+    background-size: contain; 
+    border: none; 
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer; 
+    padding: 0; 
+}
+

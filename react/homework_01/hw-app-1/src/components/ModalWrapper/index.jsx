@@ -5,11 +5,16 @@ import PropTypes from 'prop-types';
 import ModalBody from '../ModalBody';
 import ModalFooter from '../ModalFooter';
 
-function ModalWrapper({ type = 'text', header = '', body = '', firstText='', secondText='', firstClick, secondClick, onClose }) {
-
+function ModalWrapper({ type = 'text', header = '', body = '', firstText='', secondText='', firstClick, secondClick, onClose, image='' }) {
+  console.log(image);
   return (
         <div className={`${styles["modal-content"]} ${styles[type]}`}>
-          <ModalHeader onClose={onClose}>{header}</ModalHeader> 
+          {type === 'image' && (
+            <ModalHeader onClose={onClose} image={image}>{header}</ModalHeader> 
+          )}
+          {type === 'text' && (
+            <ModalHeader onClose={onClose}>{header}</ModalHeader> 
+          )}
           <ModalBody>{body}</ModalBody>
           <ModalFooter firstText={`${firstText}`} secondText={`${secondText}`} firstClick={firstClick} secondClick={secondClick}></ModalFooter>
         </div>
@@ -23,7 +28,8 @@ ModalWrapper.PropTypes = {
   body: PropTypes.string.isRequired,
   firstText: PropTypes.string.isRequired,
   secondText: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  image: PropTypes.string
 }
   
 export default ModalWrapper

@@ -2,7 +2,7 @@
     padding: 20px;
     font-size: 28px;
     cursor: pointer;
-    border: 2px solid green;
+    border: 2px solid #8A33FD;
     margin-right: 50px;
     font-family: 'Calibri', Times, serif;
     transition: all 0.3s ease; 
@@ -13,16 +13,16 @@
     }
 
     &:active {
-        border-color: darkgreen; 
+        border-color: #651bc7; 
     }
 }
 
 .default {
-    background-color: lightgreen;
-    color: black;
+    background-color: #8A33FD;
+    color: white;
     
     &:hover {
-        background-color: rgb(5, 137, 5); 
+        background-color: #651bc7
     }
 }
 
