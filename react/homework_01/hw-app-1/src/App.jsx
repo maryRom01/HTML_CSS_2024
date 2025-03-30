@@ -20,12 +20,12 @@ function App() {
 
       <Modal type="image" isOpen={isFirstModalOpen} onClose={() => setFirstModalOpen(false)}>
         <h2>Product Delete</h2>
-        <p>This is the first modal content.</p>
+        <p>By clicking the “Yes, Delete” button, PRODUCT NAME will be deleted.</p>
       </Modal>
 
       <Modal type="text" isOpen={isSecondModalOpen} onClose={() => setSecondModalOpen(false)}>
         <h2>Add Product "NAME"</h2>
-        <p>This is the second modal content.</p>
+        <p>Description for you product</p>
       </Modal>
     </>
   )
