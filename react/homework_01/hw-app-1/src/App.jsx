@@ -19,12 +19,12 @@ function App() {
       )}
 
       <Modal type="image" isOpen={isFirstModalOpen} onClose={() => setFirstModalOpen(false)}>
-        <h2>First Modal</h2>
+        <h2>Product Delete</h2>
         <p>This is the first modal content.</p>
       </Modal>
 
       <Modal type="text" isOpen={isSecondModalOpen} onClose={() => setSecondModalOpen(false)}>
-        <h2>Second Modal</h2>
+        <h2>Add Product "NAME"</h2>
         <p>This is the second modal content.</p>
       </Modal>
     </>
