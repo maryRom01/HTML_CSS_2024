@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Парацетамол",
+    "price": 55,
+    "image": "/images/paracetamol.jpg",
+    "article": "1001",
+    "package": 10
+  },
+  {
+    "name": "Ібупрофен",
+    "price": 72,
+    "image": "/images/ibuprofen.jpg",
+    "article": "1002",
+    "package": 20
+  },
+  {
+    "name": "Но-шпа",
+    "price": 85,
+    "image": "/images/noshpa.jpg",
+    "article": "1003",
+    "package": 6
+  },
+  {
+    "name": "Цитрамон",
+    "price": 43,
+    "image": "/images/tsitramon.jpg",
+    "article": "1004",
+    "package": 12
+  },
+  {
+    "name": "Аквамаріс",
+    "price": 110,
+    "image": "/images/aquamaris.jpg",
+    "article": "1005",
+    "package": 1
+  },
+  {
+    "name": "Смекта",
+    "price": 65,
+    "image": "/images/smecta.jpg",
+    "article": "1006",
+    "package": 10
+  },
+  {
+    "name": "Амброксол",
+    "price": 90,
+    "image": "/images/ambroxol.jpg",
+    "article": "1007",
+    "package": 20
+  },
+  {
+    "name": "Лоратадин",
+    "price": 78,
+    "image": "/images/loratadine.jpg",
+    "article": "1008",
+    "package": 10
+  },
+  {
+    "name": "Корвалол",
+    "price": 38,
+    "image": "/images/corvalol.jpg",
+    "article": "1009",
+    "package": 1
+  },
+  {
+    "name": "Колдфлю",
+    "price": 99,
+    "image": "/images/rinicold.jpg",
+    "article": "1010",
+    "package": 18
+  }
+]

@@ -1,13 +1,43 @@
 import './App.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from './components/Button';
 import Modal from './components/Modal';
+import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 
 function App() {
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const isModalOpen = isFirstModalOpen || isSecondModalOpen;
+
+  const getProducts = async () => {
+    try {
+      const localStorageData = getFromLocalStorage("products");
+
+      if (localStorageData) {
+        setProducts(localStorageData);
+      } else {
+        const data = await fetch("./products.json").then((res) => res.json());
+        setProducts(data);
+        addToLocalStorage("products", data);
+      }
+    } catch(error) {
+      setError(error.message);
+    } 
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    if (products.length) {
+      addToLocalStorage("products", products);
+    }
+  }, [products]);
 
   return (
     <>
