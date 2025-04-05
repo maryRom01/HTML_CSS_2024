@@ -2,7 +2,9 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import Button from './components/Button';
 import Modal from './components/Modal';
+import Header from './components/Header'
 import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
+import ProductList from './components/ProductList';
 
 function App() {
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
@@ -26,7 +28,9 @@ function App() {
       }
     } catch(error) {
       setError(error.message);
-    } 
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -39,25 +43,26 @@ function App() {
     }
   }, [products]);
 
+  // if (isLoading) {
+  //   return (
+  //     <main>
+  //       <h1>Loading...</h1>
+  //     </main>
+  //   );
+  // }
+
+  // if (!isLoading && error) {
+  //   return (
+  //     <main>
+  //       <h3 style={{ color: "red" }}>{error}</h3>
+  //     </main>
+  //   );
+  // }
+
   return (
     <>
-      {!isModalOpen && (
-        <>
-          <Button type="default" onClick={() => setFirstModalOpen(true)} classNames="first">Open first modal</Button>
-          <Button type="default" onClick={() => setSecondModalOpen(true)} classNames="second">Open second modal</Button>
-        </>
-      )}
-
-      <Modal type="image" isOpen={isFirstModalOpen} onClose={() => setFirstModalOpen(false)} 
-        header="Product Delete!" body="By clicking the “Yes, Delete” button, PRODUCT NAME will be deleted."
-        firstText="No, Cancel"  secondText="Yes, delete" firstClick={() => console.log("Cancel clicked")} secondClick={() => console.log("Delete clicked")}
-        image="./images/product/img1.jpg">
-      </Modal>
-
-      <Modal type="text" isOpen={isSecondModalOpen} onClose={() => setSecondModalOpen(false)}
-        header='Add Product "NAME"' body="Description for you product"
-        firstText='Add to favorite' firstClick={() => console.log("Add to favorite clicked")}>
-      </Modal>
+      <Header></Header>
+      <ProductList data={products}></ProductList>
     </>
   )
 }

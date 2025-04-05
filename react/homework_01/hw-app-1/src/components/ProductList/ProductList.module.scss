@@ -1,0 +1,13 @@
+main {
+    min-height: 80vh;
+    width: 100%;
+    margin: 0;
+    padding: 40px;
+    background-color: #d5cddf;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 30px; 
+    box-sizing: border-box;
+}
+
+
