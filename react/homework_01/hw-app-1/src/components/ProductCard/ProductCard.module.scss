@@ -1,8 +1,64 @@
 .card {
+    position: relative;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #fff;
     border: 2px solid #9a58f0;
     border-radius: 8px;
     height: 400px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    line-height: 1.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space between elements */
 }
+
+.card img {
+    width: 80%;
+    object-fit: contain;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    height: 200px; 
+  }
+
+.imageWrapper {
+    position: relative;
+}
+
+.starBtn {
+    position: absolute;
+    top: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        transition: fill 0.3s;
+        fill: rgb(225, 219, 219);
+    }
+}
+
+.starBtn.liked svg {
+    fill: gold; 
+}
+
+.starBtn:focus {
+    outline: none;
+}
+
+.name {
+
+}
+
+p {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.producer {
+    font-size: smaller;
+    color: gray;
+}
+

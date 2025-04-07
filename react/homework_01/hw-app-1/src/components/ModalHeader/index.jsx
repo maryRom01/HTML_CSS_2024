@@ -1,7 +1,7 @@
 import styles from './ModalHeader.module.scss';
 import PropTypes from 'prop-types';
 
-function ModalHeader({ onClose, image, children }) {
+function ModalHeader({ onClose, image, image2, children }) {
     return (
       <div className='header__container'>
         {image && (
@@ -9,6 +9,10 @@ function ModalHeader({ onClose, image, children }) {
         )}
         <button className={styles.btnClose} onClick={onClose}></button>
         <h2 className={styles.header}>{children}</h2>
+        <div className={styles.pills}>
+          <img src={`${image2}`} alt='pills'></img>
+        </div>
+        
       </div>
     );
   }

@@ -15,6 +15,11 @@
     font-weight: 500;
     width: 192px;
     height: 48px;
+
+    &:hover {
+        font-size: larger; 
+        transform: scale(1.05); 
+    }
 }
 
 .footerBtn:hover {

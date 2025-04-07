@@ -2,14 +2,24 @@ import styles from './Modal.module.scss';
 import ModalWrapper from '../ModalWrapper';
 import PropTypes from 'prop-types';
 
-function Modal({ isOpen, onClose, type = 'text', header = '', body = '', firstText='', secondText='', firstClick, secondClick, children, image }) {
+function Modal({ isOpen, onClose, type = 'text', header = '', body = '', firstText='', secondText='', firstClick, secondClick, children, image, image2 }) {
     if (!isOpen) return null; 
   
     return (
       <div className={styles["modal-backdrop"]} onClick={onClose}>
-        <ModalWrapper type={`${type}`} header={`${header}`} body={`${body}`} onClick={(e) => e.stopPropagation()} 
-          firstText={`${firstText}`} secondText={`${secondText}`} firstClick={firstClick} secondClick={secondClick} image={image}>
-            {children}
+        <ModalWrapper 
+          type = {`${type}`} 
+          header = {`${header}`} 
+          body = {`${body}`} 
+          onClick = {(e) => e.stopPropagation()} 
+          firstText = {`${firstText}`} 
+          secondText = {`${secondText}`} 
+          firstClick = {firstClick} 
+          secondClick = {secondClick} 
+          image = {image}
+          image2 = {image2}
+        >
+          {children}
         </ModalWrapper>
       </div>
     );

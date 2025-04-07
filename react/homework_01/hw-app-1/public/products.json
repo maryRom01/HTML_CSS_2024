@@ -1,72 +1,92 @@
 [
   {
+    "id": "a1e4c7d2-43b8-4e7a-b739-1f6bb6f5d8fd",
     "name": "Парацетамол",
     "price": 55,
     "image": "/images/paracetamol.jpg",
     "article": "1001",
-    "package": 10
+    "package": 32,
+    "producer": "Medixon Pharma"
   },
   {
+    "id": "92d4f4ea-c2c3-4404-a9ae-81d8ef2c4bd6",
     "name": "Ібупрофен",
     "price": 72,
-    "image": "/images/ibuprofen.jpg",
+    "image": "/images/ibuprophen.jpg",
     "article": "1002",
-    "package": 20
+    "package": 20,
+    "producer": "NovaCure Labs"
   },
   {
+    "id": "cb9efbb7-08e1-4647-83c2-2f364b2cc9ce",
     "name": "Но-шпа",
     "price": 85,
     "image": "/images/noshpa.jpg",
     "article": "1003",
-    "package": 6
+    "package": 6,
+    "producer": "Pharmatech Solutions"
   },
   {
+    "id": "cfc4c85c-6b61-4bb5-9cd8-d2ff299d0b64",
     "name": "Цитрамон",
     "price": 43,
     "image": "/images/tsitramon.jpg",
     "article": "1004",
-    "package": 12
+    "package": 12,
+    "producer": "HealWell Corp"
   },
   {
+    "id": "fbf21b3e-e774-4e49-9a1a-44f58816859d",
     "name": "Аквамаріс",
     "price": 110,
     "image": "/images/aquamaris.jpg",
     "article": "1005",
-    "package": 1
+    "package": 1,
+    "producer": "Oceanic Therapeutics"
   },
   {
+    "id": "7c6e99f4-22e0-4113-9949-3b72f49dba69",
     "name": "Смекта",
     "price": 65,
     "image": "/images/smecta.jpg",
     "article": "1006",
-    "package": 10
+    "package": 10,
+    "producer": "Biomedix Group"
   },
   {
+    "id": "46550b0d-9264-412e-b31c-17431f20f574",
     "name": "Амброксол",
     "price": 90,
     "image": "/images/ambroxol.jpg",
     "article": "1007",
-    "package": 20
+    "package": 20,
+    "producer": "Respira Labs"
   },
   {
+    "id": "64df50f1-1a7f-4c30-b091-0d94b7a68edc",
     "name": "Лоратадин",
     "price": 78,
     "image": "/images/loratadine.jpg",
     "article": "1008",
-    "package": 10
+    "package": 10,
+    "producer": "Allergenix"
   },
   {
+    "id": "f97fc9a2-87f4-44ed-9d85-dc72e5c97d99",
     "name": "Корвалол",
     "price": 38,
     "image": "/images/corvalol.jpg",
     "article": "1009",
-    "package": 1
+    "package": 1,
+    "producer": "CardioZen Ltd."
   },
   {
+    "id": "ad6e6726-0c40-44c4-85c3-8ff9a87987e6",
     "name": "Колдфлю",
     "price": 99,
     "image": "/images/rinicold.jpg",
     "article": "1010",
-    "package": 18
+    "package": 18,
+    "producer": "Coldex Biopharma"
   }
 ]
