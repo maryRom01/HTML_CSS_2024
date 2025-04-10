@@ -35,11 +35,33 @@ function App() {
     getProducts();
   }, []);
 
+  // useEffect(() => {
+  //   const storedCartCount = getFromLocalStorage('cartCount');
+  //   const storedFavoritesCount = getFromLocalStorage('favoritesCount');
+    
+  //   if (storedCartCount !== null) {
+  //     setCartCount(storedCartCount);  
+  //   }
+
+  //   if (storedFavoritesCount !== null) {
+  //     setFavoritesCount(storedFavoritesCount);  
+  //   }
+  // }, []);
+
   useEffect(() => {
     if (products.length) {
       addToLocalStorage("products", products);
     }
   }, [products]);
+
+  useEffect(() => {
+    if (cartCount !== 0) {
+      addToLocalStorage('cartCount', cartCount);
+    }
+    if (favoritesCount !== 0) {
+      addToLocalStorage('favoritesCount', favoritesCount);
+    }
+  }, [cartCount, favoritesCount]);
 
   return (
     <>
@@ -84,16 +106,7 @@ function App() {
         secondClick={() => console.log("Delete clicked")}
         image="./images/product/img1.jpg">
       </Modal>
-
-      <Modal 
-        type = "text" 
-        isOpen = {isSecondModalOpen} 
-        onClose = {() => setSecondModalOpen(false)}
-        header = '' 
-        image2 = '/images/pills.png'
-        body = "The product added to the cart"
-        firstText = 'Ok' firstClick={() => console.log("Add to cart clicked")}>
-      </Modal> */}
+      */}
     </>
   )
 }
