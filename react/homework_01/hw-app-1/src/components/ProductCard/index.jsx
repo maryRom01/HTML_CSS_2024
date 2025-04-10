@@ -2,7 +2,6 @@ import styles from './ProductCard.module.scss';
 import { FaStar } from 'react-icons/fa';
 import { useState } from 'react';
 import Button from '../Button';
-import Modal from '../Modal';
 import PropTypes from 'prop-types';
 
 function ProductCard({ name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen }) {

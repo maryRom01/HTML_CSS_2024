@@ -1,12 +1,16 @@
 import './App.css'
 import { useState, useEffect } from 'react';
 import Modal from './components/Modal';
+import modalStyles from "./components/Modal/Modal.module.scss";
 import Header from './components/Header'
 import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 import ProductList from './components/ProductList';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [isFirstModalOpen, setFirstModalOpen] = useState(false);
+  const [isSecondModalOpen, setSecondModalOpen] = useState(false);
+  const isModalOpen = isFirstModalOpen || isSecondModalOpen;
   const [error, setError] = useState(null);
 
   const getProducts = async () => {
@@ -40,8 +44,25 @@ function App() {
       <Header></Header>
       <ProductList 
         data={products} 
+        setFirstModalOpen={setFirstModalOpen}
+        setSecondModalOpen={setSecondModalOpen}
       >
       </ProductList>
+
+      {isModalOpen && (
+        <div className={modalStyles.modalbackdrop}>
+            <Modal 
+                type = "text" 
+                isOpen = {isSecondModalOpen}
+                onClose = {() => setSecondModalOpen(false)}
+                header = '' 
+                image2 = '/images/pills.png'
+                body = "The product added to the cart"
+                firstText = 'Ok' firstClick={() => console.log("Add to cart clicked")}
+            >
+            </Modal>
+        </div>
+      )}
 
       {/* <Modal 
         type="image" 
