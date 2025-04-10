@@ -20,7 +20,8 @@ function ModalHeader({ onClose, image, image2, children }) {
 ModalHeader.PropTypes = {
   onClose: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
-  image: PropTypes.image
+  image: PropTypes.image,
+  image2: PropTypes.image
 }
   
 export default ModalHeader

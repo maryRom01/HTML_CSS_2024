@@ -11,6 +11,8 @@ function App() {
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
   const isModalOpen = isFirstModalOpen || isSecondModalOpen;
+  const [cartCount, setCartCount] = useState(0);
+  const [favoritesCount, setFavoritesCount] = useState(0);
   const [error, setError] = useState(null);
 
   const getProducts = async () => {
@@ -41,11 +43,17 @@ function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header
+        cartCount = {cartCount}
+        favoritesCount = {favoritesCount}
+      >
+      </Header>
       <ProductList 
         data={products} 
         setFirstModalOpen={setFirstModalOpen}
         setSecondModalOpen={setSecondModalOpen}
+        setCartCount={setCartCount}
+        setFavoritesCount={setFavoritesCount}
       >
       </ProductList>
 

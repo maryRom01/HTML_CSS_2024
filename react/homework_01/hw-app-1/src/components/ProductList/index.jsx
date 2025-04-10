@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ProductCard from '../ProductCard';
 import styles from './ProductList.module.scss';
 
-function ProductList({ data, setFirstModalOpen, setSecondModalOpen }) {
+function ProductList({ data, setFirstModalOpen, setSecondModalOpen, setCartCount, setFavoritesCount }) {
     return (
             <>
                 <main className={styles.product_list}>
@@ -17,6 +17,8 @@ function ProductList({ data, setFirstModalOpen, setSecondModalOpen }) {
                             packageSize={packageSize}
                             setFirstModalOpen={setFirstModalOpen}
                             setSecondModalOpen={setSecondModalOpen}
+                            setCartCount={setCartCount}
+                            setFavoritesCount={setFavoritesCount}
                         />
                     ))}
                 </main>
@@ -27,7 +29,9 @@ function ProductList({ data, setFirstModalOpen, setSecondModalOpen }) {
 ProductList.PropTypes = {
   data: PropTypes.object,
   setFirstModalOpen: PropTypes.func.isRequired,
-  setSecondModalOpen: PropTypes.func.isRequired
+  setSecondModalOpen: PropTypes.func.isRequired,
+  setCartCount: PropTypes.func.isRequired,
+  setFavoritesCount: PropTypes.func.isRequired
 }
 
 export default ProductList;

@@ -4,11 +4,12 @@ import { useState } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 
-function ProductCard({ name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen }) {
+function ProductCard({ name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen, setCartCount, setFavoritesCount }) {
     const [liked, setLiked] = useState(false);
 
     const handleLikeClick = () => {
         setLiked(!liked); 
+        setFavoritesCount(prev => prev + (liked ? -1 : 1));
     };
 
     const handleDeleteClick = () => {
@@ -17,6 +18,7 @@ function ProductCard({ name, price, image, producer, packageSize, setFirstModalO
 
     const handleAddToCartClick = () => {
         setSecondModalOpen(true); 
+        setCartCount(prev => prev + 1);
     };
 
     return (
@@ -48,6 +50,10 @@ ProductCard.propTypes = {
     image: PropTypes.string.isRequired,
     producer: PropTypes.string.isRequired,
     packageSize: PropTypes.number.isRequired,
+    setFirstModalOpen: PropTypes.func.isRequired,
+    setSecondModalOpen: PropTypes.func.isRequired,
+    setCartCount: PropTypes.func.isRequired,
+    setFavoritesCount: PropTypes.func.isRequired
 };
 
 export default ProductCard;
