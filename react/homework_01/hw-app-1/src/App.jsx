@@ -6,10 +6,6 @@ import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 import ProductList from './components/ProductList';
 
 function App() {
-  const [isFirstModalOpen, setFirstModalOpen] = useState(false);
-  const [isSecondModalOpen, setSecondModalOpen] = useState(false);
-  const isModalOpen = isFirstModalOpen || isSecondModalOpen;
-
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -26,9 +22,7 @@ function App() {
       }
     } catch(error) {
       setError(error.message);
-    } finally {
-      setIsLoading(false);
-    }
+    } 
   };
 
   useEffect(() => {
@@ -43,18 +37,13 @@ function App() {
 
   return (
     <>
-      {!isModalOpen && (
-        <>
-          <Header></Header>
-          <ProductList 
-            data={products} 
-            setFirstModalOpen={setFirstModalOpen} 
-            setSecondModalOpen={setSecondModalOpen}>
-          </ProductList>
-        </>
-      )}
+      <Header></Header>
+      <ProductList 
+        data={products} 
+      >
+      </ProductList>
 
-      <Modal 
+      {/* <Modal 
         type="image" 
         isOpen={isFirstModalOpen} 
         onClose={() => setFirstModalOpen(false)} 
@@ -75,7 +64,7 @@ function App() {
         image2 = '/images/pills.png'
         body = "The product added to the cart"
         firstText = 'Ok' firstClick={() => console.log("Add to cart clicked")}>
-      </Modal>
+      </Modal> */}
     </>
   )
 }
