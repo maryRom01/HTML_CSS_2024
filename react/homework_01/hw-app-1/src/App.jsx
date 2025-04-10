@@ -10,7 +10,6 @@ function App() {
   const [products, setProducts] = useState([]);
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
-  const isModalOpen = isFirstModalOpen || isSecondModalOpen;
   const [cartCount, setCartCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
   const [error, setError] = useState(null);
@@ -79,7 +78,7 @@ function App() {
       >
       </ProductList>
 
-      {isModalOpen && (
+      {isSecondModalOpen && (
         <div className={modalStyles.modalbackdrop}>
             <Modal 
                 type = "text" 
