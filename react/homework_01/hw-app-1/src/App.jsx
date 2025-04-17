@@ -1,10 +1,10 @@
 import './App.css'
 import { useState, useEffect } from 'react';
 import Modal from './components/Modal';
-import modalStyles from "./components/Modal/Modal.module.scss";
 import Header from './components/Header'
+import AppRoutes from './AppRoutes';
 import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
-import ProductList from './components/ProductList';
+import modalStyles from "./components/Modal/Modal.module.scss";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -69,14 +69,14 @@ function App() {
         favoritesCount = {favoritesCount}
       >
       </Header>
-      <ProductList 
-        data={products} 
-        setFirstModalOpen={setFirstModalOpen}
-        setSecondModalOpen={setSecondModalOpen}
-        setCartCount={setCartCount}
-        setFavoritesCount={setFavoritesCount}
-      >
-      </ProductList>
+      <main>
+        <AppRoutes  data={products} 
+                    setFirstModalOpen={setFirstModalOpen}
+                    setSecondModalOpen={setSecondModalOpen}
+                    setCartCount={setCartCount}
+                    setFavoritesCount={setFavoritesCount}>
+        </AppRoutes>
+      </main>
 
       {isSecondModalOpen && (
         <div className={modalStyles.modalbackdrop}>
