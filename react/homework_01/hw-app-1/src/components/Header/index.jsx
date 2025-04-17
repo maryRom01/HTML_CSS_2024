@@ -1,31 +1,46 @@
+import { NavLink, Link } from 'react-router';
 import styles from './Header.module.scss';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 function Header({ children='', cartCount, favoritesCount }) {
     return (
         <>
             <header className={styles.header}>
-                <h1 className={styles.logo}>{ children }</h1>
-                <div className={styles.icons}>
+                <Link to='/'>
                     <div className={styles.iconWrapper}>
                         <img
-                            src="/images/star.svg"
+                            src="/images/logo.svg"
                             alt="favourite"
-                            className={styles.icon}
+                            className={styles.logo}
                         />
-                        <span className={styles.counter}>{ favoritesCount }</span>
                     </div>
-                    <div className={styles.iconWrapper}>
-                        <img
-                            src="/images/shopcart.svg"
-                            alt="cart"
-                            className={styles.icon}
-                        />
-                        <span className={styles.counter}>{ cartCount }</span>
-                    </div>
+                </Link>
+                <Link to='/'>
+                    <h1 className={styles.logo}>{ children }</h1>
+                </Link>
+                <div className={styles.icons}>
+                    <NavLink to='favorite' className={({ isActive }) => classNames(styles.navItem, { [styles.active]: isActive })}>
+                        <div className={styles.iconWrapper}>
+                            <img
+                                src="/images/star.svg"
+                                alt="favourite"
+                                className={styles.icon}
+                            />
+                            <span className={styles.counter}>{ favoritesCount }</span>
+                        </div>
+                    </NavLink>
+                    <NavLink to='cart' className={({ isActive }) => classNames(styles.navItem, { [styles.active]: isActive })}>
+                        <div className={styles.iconWrapper}>
+                            <img
+                                src="/images/shopcart.svg"
+                                alt="cart"
+                                className={styles.icon}
+                            />
+                            <span className={styles.counter}>{ cartCount }</span>
+                        </div>
+                    </NavLink>
                 </div>
-                
-                
             </header>
         </>
     )

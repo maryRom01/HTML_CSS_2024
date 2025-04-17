@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from "react-router";
 import HomePage from './pages/HomePage';
+import CartPage from './pages/CartPage';
+import FavoritePage from './pages/FavoritePage';
 
 const AppRoutes = ({
     data = [],
@@ -16,6 +18,8 @@ const AppRoutes = ({
                                                 setCartCount={setCartCount}
                                                 setFavoritesCount={setFavoritesCount}
                                                 /> } />
+            <Route path='/cart' element={ <CartPage />} />                                   
+            <Route path='/favorite' element={ <FavoritePage />} />                                   
             <Route path='*' element={<h1>Page not found</h1>} />
         </Routes>
     )

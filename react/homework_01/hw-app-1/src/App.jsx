@@ -34,18 +34,18 @@ function App() {
     getProducts();
   }, []);
 
-  // useEffect(() => {
-  //   const storedCartCount = getFromLocalStorage('cartCount');
-  //   const storedFavoritesCount = getFromLocalStorage('favoritesCount');
+  useEffect(() => {
+    const storedCartCount = getFromLocalStorage('cartCount');
+    const storedFavoritesCount = getFromLocalStorage('favoritesCount');
     
-  //   if (storedCartCount !== null) {
-  //     setCartCount(storedCartCount);  
-  //   }
+    if (storedCartCount !== null) {
+      setCartCount(storedCartCount);  
+    }
 
-  //   if (storedFavoritesCount !== null) {
-  //     setFavoritesCount(storedFavoritesCount);  
-  //   }
-  // }, []);
+    if (storedFavoritesCount !== null) {
+      setFavoritesCount(storedFavoritesCount);  
+    }
+  }, []);
 
   useEffect(() => {
     if (products.length) {
@@ -68,6 +68,7 @@ function App() {
         cartCount = {cartCount}
         favoritesCount = {favoritesCount}
       >
+        Pharmacy
       </Header>
       <main>
         <AppRoutes  data={products} 

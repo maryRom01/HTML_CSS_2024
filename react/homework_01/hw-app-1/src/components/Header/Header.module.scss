@@ -11,6 +11,12 @@ header {
     color: white;
 }
 
+.logo {
+    width: 80px;
+    height: 80px;
+    margin-left: 40px;
+}
+
 .icons {
     display: flex;
     gap: 20px;
@@ -36,4 +42,28 @@ header {
     padding: 2px 2px;
     font-weight: bold;
 }
+
+.navItem {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+  
+    &:hover {
+      color: #4caf50;
+    }
+  
+    &.active {
+      opacity: .4;
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+
+  .header a {
+    text-decoration: none;
+    color: inherit;
+  }
   
