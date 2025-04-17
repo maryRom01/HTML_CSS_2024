@@ -8,7 +8,11 @@ const AppRoutes = ({
     setFirstModalOpen,
     setSecondModalOpen,
     setCartCount,
-    setFavoritesCount
+    setFavoritesCount,
+    cart = [],
+    updateCart = () => {},
+    favorite = [],
+    updateFavorite = () => {}
 }) => {
     return (
         <Routes>
@@ -17,9 +21,10 @@ const AppRoutes = ({
                                                 setSecondModalOpen={setSecondModalOpen}
                                                 setCartCount={setCartCount}
                                                 setFavoritesCount={setFavoritesCount}
+                                                updateCart={updateCart}
                                                 /> } />
-            <Route path='/cart' element={ <CartPage />} />                                   
-            <Route path='/favorite' element={ <FavoritePage />} />                                   
+            <Route path='/cart' element={ <CartPage cart={cart} updateCart={updateCart}/>} />                                   
+            <Route path='/favorite' element={ <FavoritePage favorite={favorite} updateFavorite={updateFavorite}/>} />                                   
             <Route path='*' element={<h1>Page not found</h1>} />
         </Routes>
     )

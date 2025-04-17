@@ -5,6 +5,7 @@ import Header from './components/Header'
 import AppRoutes from './AppRoutes';
 import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 import modalStyles from "./components/Modal/Modal.module.scss";
+import { useImmer } from "use-immer";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -13,6 +14,8 @@ function App() {
   const [cartCount, setCartCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
   const [error, setError] = useState(null);
+  const [cart, updateCart] = useImmer([]);
+  const [favorite, updateFavorite] = useImmer([]);
 
   const getProducts = async () => {
     try {
@@ -75,7 +78,12 @@ function App() {
                     setFirstModalOpen={setFirstModalOpen}
                     setSecondModalOpen={setSecondModalOpen}
                     setCartCount={setCartCount}
-                    setFavoritesCount={setFavoritesCount}>
+                    setFavoritesCount={setFavoritesCount}
+                    cart={cart}
+                    updateCart={updateCart}
+                    favorite={favorite}
+                    updateFavorite={updateFavorite}
+        >     
         </AppRoutes>
       </main>
 

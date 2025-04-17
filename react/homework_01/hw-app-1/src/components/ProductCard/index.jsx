@@ -4,8 +4,21 @@ import { useState } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 
-function ProductCard({ name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen, setCartCount, setFavoritesCount }) {
+function ProductCard({ id, name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen, setCartCount, setFavoritesCount, updateCart }) {
     const [liked, setLiked] = useState(false);
+
+    const addItemToCart = (item) => {
+        console.log(`item: ${JSON.stringify(item)}`);
+        updateCart(draft => {
+            const index = draft.findIndex(el => item.id === el.id);
+    
+            if (index === -1) {
+                draft.push({...item, count: 1})
+            } else {
+                draft[index].count = draft[index].count + 1;
+            }
+        })
+    }
 
     const handleLikeClick = () => {
         setLiked(!liked); 
@@ -19,6 +32,7 @@ function ProductCard({ name, price, image, producer, packageSize, setFirstModalO
     const handleAddToCartClick = () => {
         setSecondModalOpen(true); 
         setCartCount(prev => prev + 1);
+        addItemToCart({ id, name, price, image });
     };
 
     return (
@@ -53,7 +67,8 @@ ProductCard.propTypes = {
     setFirstModalOpen: PropTypes.func.isRequired,
     setSecondModalOpen: PropTypes.func.isRequired,
     setCartCount: PropTypes.func.isRequired,
-    setFavoritesCount: PropTypes.func.isRequired
+    setFavoritesCount: PropTypes.func.isRequired,
+    updateCart: PropTypes.func.isRequired
 };
 
 export default ProductCard;
