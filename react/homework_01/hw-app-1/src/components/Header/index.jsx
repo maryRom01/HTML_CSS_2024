@@ -17,7 +17,7 @@ function Header({ children='', cartCount, favoritesCount }) {
                     </div>
                 </Link>
                 <Link to='/'>
-                    <h1 className={styles.logo}>{ children }</h1>
+                    <h1>{ children }</h1>
                 </Link>
                 <div className={styles.icons}>
                     <NavLink to='favorite' className={({ isActive }) => classNames(styles.navItem, { [styles.active]: isActive })}>
