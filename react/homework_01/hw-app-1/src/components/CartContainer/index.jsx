@@ -15,6 +15,7 @@ const CartContainer = ({ cartItems = []}) => {
                         key={item.id}
                         id={item.id}
                         name={item.name}
+                        price={item.price}
                         image={item.image}
                     />
                 ))
@@ -29,7 +30,7 @@ CartContainer.propTypes = {
     cartItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
+            name: PropTypes.string.isRequired,
         })
     ).isRequired,
 };

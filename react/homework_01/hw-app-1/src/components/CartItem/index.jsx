@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './CartItem.module.scss';
 
-const CartItem = ({ id, name, image, setIsModalOpen = () => {}, setModalProps = () => {} }) => {
+const CartItem = ({ id, name, price, image }) => {
     return (
         <div className={styles.cartItem}>
             <div className={styles.cartDetails}>
                 <h3 className={styles.cartTitle}>{name}</h3>
-                <img src={image} alt="title" width={50} />
-                <p className={styles.cartCount}>Quantity: </p>
+                <img src={image} alt="title" width={80} />
+                <p>{Number(price).toFixed(2)}</p>
             </div>
             <div className={styles.actions}>
                 <button className={styles.increment}>
@@ -29,11 +29,8 @@ const CartItem = ({ id, name, image, setIsModalOpen = () => {}, setModalProps = 
 
 CartItem.propTypes = {
     id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    count: PropTypes.number.isRequired,
-    onIncrement: PropTypes.func.isRequired,
-    onDecrement: PropTypes.func.isRequired,
-    onRemove: PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired
 };
 
 export default CartItem;
