@@ -65,6 +65,19 @@ function App() {
     }
   }, [cartCount, favoritesCount]);
 
+  useEffect(() => {
+    const storedCart = getFromLocalStorage('cart');
+    if (storedCart) {
+      updateCart(() => storedCart);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      addToLocalStorage('cart', cart);
+    }
+  }, [cart]);
+
   return (
     <>
       <Header
