@@ -9,10 +9,11 @@ function ModalHeader({ onClose, image, image2, children }) {
         )}
         <button className={styles.btnClose} onClick={onClose}></button>
         <h2 className={styles.header}>{children}</h2>
-        <div className={styles.pills}>
-          <img src={`${image2}`} alt='pills'></img>
-        </div>
-        
+        {image2 && (
+          <div className={styles.pills}>
+            <img src={`${image2}`} alt='pills'></img>
+          </div>
+        )}
       </div>
     );
   }

@@ -25,7 +25,7 @@ function Modal({ isOpen, onClose, type = 'text', header = '', body = '', firstTe
     );
   }
 
-Modal.PropTypes = {
+Modal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
   type: PropTypes.oneOf(['image', 'text']),

@@ -3,12 +3,28 @@ import PropTypes from 'prop-types';
 import CartItem from '../CartItem';
 import styles from './CartContainer.module.scss';
 
-const CartContainer = ({ cartItems = []}) => {
-    console.log(Array.from(cartItems));
+const CartContainer = ({ 
+    cartItems = [],
+    setFirstModalOpen,
+    setSelectedItem
+}) => {
+    const cartSum = cartItems.reduce((acc, el) => {
+        acc = acc + el.count * el.price;
+        return acc;
+    }, 0);    
+
+    const items = cartItems.reduce((acc, el) => {
+        acc = acc + el.count;
+        return acc;
+    }, 0);
 
     return (
         <div className={styles.cartContainer}>
-            <h2 className={styles.heading}>Your Cart</h2>
+            <h2 className={styles.heading}>Cart </h2>
+            <div className={styles.contextContainer}>
+                <div className={styles.context}>Sum: <span className={styles.text}>{Number(cartSum).toFixed(2)}</span></div>
+                <div className={styles.context}>Quantity: <span className={styles.text}>{items}</span></div>
+            </div>
             {cartItems.length > 0 ? (
                 cartItems.map((item) => (
                     <CartItem
@@ -17,10 +33,13 @@ const CartContainer = ({ cartItems = []}) => {
                         name={item.name}
                         price={item.price}
                         image={item.image}
+                        count={item.count}
+                        setFirstModalOpen={setFirstModalOpen} 
+                        setSelectedItem={setSelectedItem}
                     />
                 ))
             ) : (
-                <p className={styles.emptyCart}>Your cart is empty.</p>
+                <p className={styles.emptyCart}>Cart is empty.</p>
             )}
         </div>
     );

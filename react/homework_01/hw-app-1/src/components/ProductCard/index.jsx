@@ -4,14 +4,12 @@ import { useState } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 
-function ProductCard({ id, name, price, image, producer, packageSize, setFirstModalOpen, setSecondModalOpen, setCartCount, setFavoritesCount, updateCart }) {
+function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoritesCount, updateCart }) {
     const [liked, setLiked] = useState(false);
 
     const addItemToCart = (item) => {
-        console.log(`item: ${JSON.stringify(item)}`);
         updateCart(draft => {
             const index = draft.findIndex(el => item.id === el.id);
-    
             if (index === -1) {
                 draft.push({...item, count: 1})
             } else {
@@ -23,10 +21,6 @@ function ProductCard({ id, name, price, image, producer, packageSize, setFirstMo
     const handleLikeClick = () => {
         setLiked(!liked); 
         setFavoritesCount(prev => prev + (liked ? -1 : 1));
-    };
-
-    const handleDeleteClick = () => {
-        setFirstModalOpen(true); 
     };
 
     const handleAddToCartClick = () => {

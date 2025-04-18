@@ -11,6 +11,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
   const [error, setError] = useState(null);
@@ -90,6 +91,7 @@ function App() {
         <AppRoutes  data={products} 
                     setFirstModalOpen={setFirstModalOpen}
                     setSecondModalOpen={setSecondModalOpen}
+                    setSelectedItem={setSelectedItem}
                     setCartCount={setCartCount}
                     setFavoritesCount={setFavoritesCount}
                     cart={cart}
@@ -115,19 +117,23 @@ function App() {
         </div>
       )}
 
-      {/* <Modal 
-        type="image" 
-        isOpen={isFirstModalOpen} 
-        onClose={() => setFirstModalOpen(false)} 
-        header="Product Delete!" 
-        body="By clicking the “Yes, Delete” button, PRODUCT NAME will be deleted."
-        firstText="No, Cancel"  
-        secondText="Yes, delete" 
-        firstClick={() => console.log("Cancel clicked")} 
-        secondClick={() => console.log("Delete clicked")}
-        image="./images/product/img1.jpg">
-      </Modal>
-      */}
+      {isFirstModalOpen && selectedItem && (
+        <div className={modalStyles.modalbackdrop}>
+          <Modal 
+            type="image" 
+            isOpen={isFirstModalOpen} 
+            onClose={() => setFirstModalOpen(false)} 
+            header={selectedItem.name} 
+            body={`${selectedItem.name} will be deleted.`}
+            firstText="No, Cancel"  
+            secondText="Yes, delete" 
+            firstClick={() => console.log("Cancel clicked")} 
+            secondClick={() => console.log("Delete clicked")}
+            image={selectedItem.image}
+          />
+        </div>
+      )}
+      
     </>
   )
 }
