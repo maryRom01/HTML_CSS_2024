@@ -123,7 +123,7 @@ function App() {
             type="image" 
             isOpen={isFirstModalOpen} 
             onClose={() => setFirstModalOpen(false)} 
-            header={selectedItem.name} 
+            header={`${selectedItem.name} - ${Number(selectedItem.price).toFixed(2)}`}
             body={`${selectedItem.name} will be deleted.`}
             firstText="No, Cancel"  
             secondText="Yes, delete" 
