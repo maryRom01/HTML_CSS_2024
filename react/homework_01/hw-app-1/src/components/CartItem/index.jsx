@@ -18,12 +18,12 @@ const CartItem = ({ id, name, price, image, count, setFirstModalOpen, setSelecte
                 <p>Quantity: {count}</p>
             </div>
             <div className={styles.actions}>
-                <button className={styles.increment}>
+                {/* <button className={styles.increment}>
                     +
                 </button>
                 <button className={styles.decrement}>
                     -
-                </button>
+                </button> */}
                 <button className={styles.remove} onClick={handleDeleteClick}>
                     Remove
                 </button>

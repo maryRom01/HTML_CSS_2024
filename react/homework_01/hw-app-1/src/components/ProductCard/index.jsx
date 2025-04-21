@@ -3,8 +3,9 @@ import { FaStar } from 'react-icons/fa';
 import { useState } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
+import { addToLocalStorage, removeItemFromLocalStorageFavorite } from '../../utils/localStorage';
 
-function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoritesCount, updateCart }) {
+function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, updateFavorite }) {
     const [liked, setLiked] = useState(false);
 
     const addItemToCart = (item) => {
@@ -18,9 +19,41 @@ function ProductCard({ id, name, price, image, producer, packageSize, setSecondM
         })
     }
 
+    const addItemToFavorite = (item) => {
+        updateFavorite(draft => {
+            const index = draft.findIndex(el => item.id === el.id);
+            if (index === -1) {
+                draft.push({...item, count: 1})
+            } else {
+                draft[index].count = draft[index].count + 1;
+            }
+        })
+    }
+
+    const removeItemFromFavorite = (id) => {
+            console.log(id);
+            updateFavorite(draft => {
+              const index = draft.findIndex(el => el.id === id);
+        
+              if (index !== -1) {
+                draft.splice(index, 1)
+              }
+            })
+            removeItemFromLocalStorageFavorite(id);
+            const updatedFavorite = JSON.parse(localStorage.getItem('favorite')) || [];
+            setFavoriteCount(updatedFavorite.length);
+            addToLocalStorage('favoriteCount', updatedFavorite.length);
+        }
+
     const handleLikeClick = () => {
-        setLiked(!liked); 
-        setFavoritesCount(prev => prev + (liked ? -1 : 1));
+        const isLiking = !liked;
+        setLiked(isLiking); 
+        setFavoriteCount(prev => prev + (liked ? -1 : 1));
+        if (isLiking) {
+            addItemToFavorite({ id, name, price, image });
+        } else {
+            removeItemFromFavorite(id);
+        }
     };
 
     const handleAddToCartClick = () => {
@@ -61,7 +94,7 @@ ProductCard.propTypes = {
     setFirstModalOpen: PropTypes.func.isRequired,
     setSecondModalOpen: PropTypes.func.isRequired,
     setCartCount: PropTypes.func.isRequired,
-    setFavoritesCount: PropTypes.func.isRequired,
+    setFavoriteCount: PropTypes.func.isRequired,
     updateCart: PropTypes.func.isRequired
 };
 

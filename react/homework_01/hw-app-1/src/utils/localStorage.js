@@ -8,6 +8,12 @@ export const removeItemFromLocalStorageCart = (id) => {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
 };
 
+export const removeItemFromLocalStorageFavorite = (id) => {
+    const favorite = JSON.parse(localStorage.getItem('favorite')) || [];
+    const updatedFavorite = favorite.filter(item => item.id !== id);
+    localStorage.setItem('favorite', JSON.stringify(updatedFavorite));
+}
+
 export const getFromLocalStorage = (key) => {
     const data = localStorage.getItem(key);
     if (data) {

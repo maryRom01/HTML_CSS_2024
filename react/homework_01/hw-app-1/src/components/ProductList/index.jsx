@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ProductCard from '../ProductCard';
 import styles from './ProductList.module.scss';
 
-function ProductList({ data, setSecondModalOpen, setCartCount, setFavoritesCount, updateCart }) {
+function ProductList({ data, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, updateFavorite }) {
 
     return (
             <>
@@ -19,8 +19,9 @@ function ProductList({ data, setSecondModalOpen, setCartCount, setFavoritesCount
                             packageSize={packageSize}
                             setSecondModalOpen={setSecondModalOpen}
                             setCartCount={setCartCount}
-                            setFavoritesCount={setFavoritesCount}
+                            setFavoriteCount={setFavoriteCount}
                             updateCart={updateCart}
+                            updateFavorite={updateFavorite}
                         />
                     ))}
                 </main>

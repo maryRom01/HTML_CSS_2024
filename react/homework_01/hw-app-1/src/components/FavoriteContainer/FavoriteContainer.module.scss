@@ -1,0 +1,43 @@
+.favoriteContainer {
+    padding: 24px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    margin-bottom: 16px;
+    margin-right: 40px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+  }
+
+  .contextContainer {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background-color: rgb(239, 237, 237);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .context {
+    margin-bottom: 16px;
+    margin-right: 40px;
+    font-size: 18px;
+    color: #333;
+    text-align: end;
+  }
+  
+  .emptyFavorite {
+    font-size: 18px;
+    color: #999;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .text {
+    font-weight: 600;
+  }
+  

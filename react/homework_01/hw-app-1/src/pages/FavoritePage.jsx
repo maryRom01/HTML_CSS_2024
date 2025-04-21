@@ -1,7 +1,13 @@
+import FavoriteContainer from "../components/FavoriteContainer";
 
-
-const FavoritePage = () => {
-
+const FavoritePage = ({ 
+    favorite = []
+}) => {
+    return (
+        <FavoriteContainer
+            favorite={favorite}
+        />
+    )
 }
 
 export default FavoritePage;

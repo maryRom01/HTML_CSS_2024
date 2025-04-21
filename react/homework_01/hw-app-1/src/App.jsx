@@ -13,7 +13,7 @@ function App() {
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [cartCount, setCartCount] = useState(0);
-  const [favoritesCount, setFavoritesCount] = useState(0);
+  const [favoriteCount, setFavoriteCount] = useState(0);
   const [error, setError] = useState(null);
   const [cart, updateCart] = useImmer([]);
   const [favorite, updateFavorite] = useImmer([]);
@@ -45,15 +45,6 @@ function App() {
   }, [products]);
 
   useEffect(() => {
-    if (cartCount !== 0) {
-      addToLocalStorage('cartCount', cartCount);
-    }
-    if (favoritesCount !== 0) {
-      addToLocalStorage('favoritesCount', favoritesCount);
-    }
-  }, [cartCount, favoritesCount]);
-
-  useEffect(() => {
     const storedCart = getFromLocalStorage('cart');
     if (storedCart) {
       updateCart(() => storedCart);
@@ -61,21 +52,45 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const storedFavorite = getFromLocalStorage('favorite');
+    if (storedFavorite) {
+      updateFavorite(() => storedFavorite);
+    }
+  }, []);
+
+  useEffect(() => {
     if (cart.length > 0) {
       addToLocalStorage('cart', cart);
+      addToLocalStorage('cartCount', cart.length);
     }
-  }, [cart]);
+  }, [cart, cartCount]);
+
+  useEffect(() => {
+    if (favorite.length > 0) {
+      addToLocalStorage('favorite', favorite);
+      addToLocalStorage('favoriteCount', favorite.length);
+    }
+  }, [favorite, favoriteCount]);
+
+  useEffect(() => {
+    if (cartCount !== 0) {
+      addToLocalStorage('cartCount', cartCount);
+    }
+    if (favoriteCount !== 0) {
+      addToLocalStorage('favoriteCount', favoriteCount);
+    }
+  }, [cartCount, favoriteCount]);
 
   useEffect(() => {
     const storedCartCount = getFromLocalStorage('cartCount');
-    const storedFavoritesCount = getFromLocalStorage('favoritesCount');
+    const storedFavoriteCount = getFromLocalStorage('favoriteCount');
     
     if (storedCartCount !== null) {
       setCartCount(storedCartCount);  
     }
 
-    if (storedFavoritesCount !== null) {
-      setFavoritesCount(storedFavoritesCount);  
+    if (storedFavoriteCount !== null) {
+      setFavoriteCount(storedFavoriteCount);  
     }
   }, []);
 
@@ -83,7 +98,7 @@ function App() {
     <>
       <Header
         cartCount = {cartCount}
-        favoritesCount = {favoritesCount}
+        favoritesCount = {favoriteCount}
       >
         Pharmacy
       </Header>
@@ -95,7 +110,7 @@ function App() {
                     selectedItem={selectedItem}
                     setSelectedItem={setSelectedItem}
                     setCartCount={setCartCount}
-                    setFavoritesCount={setFavoritesCount}
+                    setFavoriteCount={setFavoriteCount}
                     cart={cart}
                     updateCart={updateCart}
                     favorite={favorite}
