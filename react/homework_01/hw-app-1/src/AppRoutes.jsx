@@ -5,8 +5,10 @@ import FavoritePage from './pages/FavoritePage';
 
 const AppRoutes = ({
     data = [],
+    isFirstModalOpen,
     setFirstModalOpen,
     setSecondModalOpen,
+    selectedItem,
     setSelectedItem,
     setCartCount,
     setFavoritesCount,
@@ -25,9 +27,12 @@ const AppRoutes = ({
                                     /> } 
             />
             <Route path='/cart' element={ <CartPage cart={cart} 
+                                                    isFirstModalOpen={isFirstModalOpen}
                                                     setFirstModalOpen={setFirstModalOpen} 
+                                                    selectedItem={selectedItem}
                                                     setSelectedItem={setSelectedItem}
                                                     updateCart={updateCart}
+                                                    setCartCount={setCartCount}
                                         />} 
             />                                   
             <Route path='/favorite' element={ <FavoritePage favorite={favorite} 

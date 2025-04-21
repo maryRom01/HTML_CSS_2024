@@ -89,8 +89,10 @@ function App() {
       </Header>
       <main>
         <AppRoutes  data={products} 
+                    isFirstModalOpen={isFirstModalOpen}
                     setFirstModalOpen={setFirstModalOpen}
                     setSecondModalOpen={setSecondModalOpen}
+                    selectedItem={selectedItem}
                     setSelectedItem={setSelectedItem}
                     setCartCount={setCartCount}
                     setFavoritesCount={setFavoritesCount}
@@ -116,24 +118,6 @@ function App() {
             </Modal>
         </div>
       )}
-
-      {isFirstModalOpen && selectedItem && (
-        <div className={modalStyles.modalbackdrop}>
-          <Modal 
-            type="image" 
-            isOpen={isFirstModalOpen} 
-            onClose={() => setFirstModalOpen(false)} 
-            header={`${selectedItem.name} - ${Number(selectedItem.price).toFixed(2)}`}
-            body={`${selectedItem.name} will be deleted.`}
-            firstText="No, Cancel"  
-            secondText="Yes, delete" 
-            firstClick={() => console.log("Cancel clicked")} 
-            secondClick={() => console.log("Delete clicked")}
-            image={selectedItem.image}
-          />
-        </div>
-      )}
-      
     </>
   )
 }

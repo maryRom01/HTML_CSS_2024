@@ -5,7 +5,7 @@ import styles from './CartItem.module.scss';
 const CartItem = ({ id, name, price, image, count, setFirstModalOpen, setSelectedItem }) => {
 
     const handleDeleteClick = () => {
-        setSelectedItem({ name, price, image }); 
+        setSelectedItem({ id, name, price, image }); 
         setFirstModalOpen(true);
     };
 
