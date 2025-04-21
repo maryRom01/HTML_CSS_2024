@@ -39,19 +39,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const storedCartCount = getFromLocalStorage('cartCount');
-    const storedFavoritesCount = getFromLocalStorage('favoritesCount');
-    
-    if (storedCartCount !== null) {
-      setCartCount(storedCartCount);  
-    }
-
-    if (storedFavoritesCount !== null) {
-      setFavoritesCount(storedFavoritesCount);  
-    }
-  }, []);
-
-  useEffect(() => {
     if (products.length) {
       addToLocalStorage("products", products);
     }
@@ -78,6 +65,19 @@ function App() {
       addToLocalStorage('cart', cart);
     }
   }, [cart]);
+
+  useEffect(() => {
+    const storedCartCount = getFromLocalStorage('cartCount');
+    const storedFavoritesCount = getFromLocalStorage('favoritesCount');
+    
+    if (storedCartCount !== null) {
+      setCartCount(storedCartCount);  
+    }
+
+    if (storedFavoritesCount !== null) {
+      setFavoritesCount(storedFavoritesCount);  
+    }
+  }, []);
 
   return (
     <>
