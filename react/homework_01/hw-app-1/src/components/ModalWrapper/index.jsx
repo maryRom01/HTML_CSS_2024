@@ -8,7 +8,9 @@ import ModalFooter from '../ModalFooter';
 function ModalWrapper({ type = 'text', header = '', body = '', firstText='', secondText='', firstClick, secondClick, onClose, image='', image2 = '' }) {
   console.log(image);
   return (
-        <div className={`${styles["modal-content"]} ${styles[type]}`}>
+    <>
+       <div className={styles.background} onClick={() => setIsOpen(false)} />
+       <div className={`${styles["modal-content"]} ${styles[type]}`}>
           {type === 'image' && (
             <ModalHeader onClose={onClose} image={image}>{header}</ModalHeader> 
           )}
@@ -18,6 +20,8 @@ function ModalWrapper({ type = 'text', header = '', body = '', firstText='', sec
           <ModalBody>{body}</ModalBody>
           <ModalFooter firstText={`${firstText}`} secondText={`${secondText}`} firstClick={firstClick} secondClick={secondClick}></ModalFooter>
         </div>
+    </>
+        
   );
 }
 
