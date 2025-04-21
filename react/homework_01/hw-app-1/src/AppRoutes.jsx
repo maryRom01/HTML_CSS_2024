@@ -24,6 +24,7 @@ const AppRoutes = ({
                                                 setCartCount={setCartCount}
                                                 setFavoriteCount={setFavoriteCount}
                                                 updateCart={updateCart}
+                                                favorite={favorite}
                                                 updateFavorite={updateFavorite}
                                     /> } 
             />

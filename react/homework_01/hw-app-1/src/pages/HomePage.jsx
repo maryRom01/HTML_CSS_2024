@@ -1,6 +1,6 @@
 import ProductList from "../components/ProductList";
 
-const HomePage = ({ products = [], setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, updateFavorite }) => {
+const HomePage = ({ products = [], setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, favorite, updateFavorite }) => {
 
     return (
         <ProductList 
@@ -9,6 +9,7 @@ const HomePage = ({ products = [], setSecondModalOpen, setCartCount, setFavorite
                 setCartCount={setCartCount}
                 setFavoriteCount={setFavoriteCount}
                 updateCart={updateCart}
+                favorite={favorite}
                 updateFavorite={updateFavorite}
               >
         </ProductList>

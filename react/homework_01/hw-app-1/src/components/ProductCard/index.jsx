@@ -1,12 +1,17 @@
 import styles from './ProductCard.module.scss';
 import { FaStar } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import { addToLocalStorage, removeItemFromLocalStorageFavorite } from '../../utils/localStorage';
 
-function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, updateFavorite }) {
+function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, favorite, updateFavorite }) {
     const [liked, setLiked] = useState(false);
+
+    useEffect(() => {
+        const isFavorite = favorite.some(item => item.id === id);
+        setLiked(isFavorite);
+    }, [favorite, id]);
 
     const addItemToCart = (item) => {
         updateCart(draft => {
