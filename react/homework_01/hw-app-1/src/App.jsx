@@ -56,57 +56,54 @@ function App() {
     }
   }, [favorite]);
 
-  // useEffect(() => {
-  //   const storedCartCount = getFromLocalStorage('cartCount');
-  //   const storedFavoriteCount = getFromLocalStorage('favoriteCount');
+  useEffect(() => {
+    const storedCartCount = getFromLocalStorage('cartCount');
+    const storedFavoriteCount = getFromLocalStorage('favoriteCount');
   
-  //   if (storedCartCount !== null) {
-  //     setCartCount(storedCartCount);  
-  //   }
+    if (storedCartCount !== null) {
+      setCartCount(storedCartCount);  
+    }
   
-  //   if (storedFavoriteCount !== null) {
-  //     setFavoriteCount(storedFavoriteCount);  
-  //   }
-  // }, []);
+    if (storedFavoriteCount !== null) {
+      setFavoriteCount(storedFavoriteCount);  
+    }
+  }, []);
 
-  // const [cartCount, setCartCount] = useState(0);
-  // const [favoriteCount, setFavoriteCount] = useState(0);
+  useEffect(() => {
+    if (cart.length > 0) {
+      addToLocalStorage('cart', cart);
+      addToLocalStorage('cartCount', cart.length);
+    }
+  }, [cart, cartCount]);
 
-  // useEffect(() => {
-  //   if (cart.length > 0) {
-  //     addToLocalStorage('cart', cart);
-  //     addToLocalStorage('cartCount', cart.length);
-  //   }
-  // }, [cart, cartCount]);
+  useEffect(() => {
+    if (favorite.length > 0) {
+      addToLocalStorage('favorite', favorite);
+      addToLocalStorage('favoriteCount', favorite.length);
+    }
+  }, [favorite, favoriteCount]);
 
-  // useEffect(() => {
-  //   if (favorite.length > 0) {
-  //     addToLocalStorage('favorite', favorite);
-  //     addToLocalStorage('favoriteCount', favorite.length);
-  //   }
-  // }, [favorite, favoriteCount]);
+  useEffect(() => {
+    if (cartCount !== 0) {
+      addToLocalStorage('cartCount', cartCount);
+    }
+    if (favoriteCount !== 0) {
+      addToLocalStorage('favoriteCount', favoriteCount);
+    }
+  }, [cartCount, favoriteCount]);
 
-  // useEffect(() => {
-  //   if (cartCount !== 0) {
-  //     addToLocalStorage('cartCount', cartCount);
-  //   }
-  //   if (favoriteCount !== 0) {
-  //     addToLocalStorage('favoriteCount', favoriteCount);
-  //   }
-  // }, [cartCount, favoriteCount]);
-
-  // useEffect(() => {
-  //   const storedCartCount = getFromLocalStorage('cartCount');
-  //   const storedFavoriteCount = getFromLocalStorage('favoriteCount');
+  useEffect(() => {
+    const storedCartCount = getFromLocalStorage('cartCount');
+    const storedFavoriteCount = getFromLocalStorage('favoriteCount');
     
-  //   if (storedCartCount !== null) {
-  //     setCartCount(storedCartCount);  
-  //   }
+    if (storedCartCount !== null) {
+      setCartCount(storedCartCount);  
+    }
 
-  //   if (storedFavoriteCount !== null) {
-  //     setFavoriteCount(storedFavoriteCount);  
-  //   }
-  // }, []);
+    if (storedFavoriteCount !== null) {
+      setFavoriteCount(storedFavoriteCount);  
+    }
+  }, []);
 
   return (
     <>
