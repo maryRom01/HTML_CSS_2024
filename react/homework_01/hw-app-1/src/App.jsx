@@ -1,5 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Modal from './components/Modal';
 import Header from './components/Header'
 import AppRoutes from './AppRoutes';
@@ -7,61 +8,24 @@ import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 import modalStyles from "./components/Modal/Modal.module.scss";
 import { useImmer } from "use-immer";
 import axios from 'axios';
+import { fetchProducts } from './slices/productsSlice';
 
 function App() {
-  const MAIN_URL = 'https://fakestoreapi.com/products/';
-  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products.items);
+  const error = useSelector((state) => state.products.error);
+
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [cartCount, setCartCount] = useState(0);
   const [favoriteCount, setFavoriteCount] = useState(0);
-  const [error, setError] = useState(null);
   const [cart, updateCart] = useImmer([]);
   const [favorite, updateFavorite] = useImmer([]);
 
-  // const getProducts = async () => {
-  //   try {
-  //     const localStorageData = getFromLocalStorage("products");
-
-  //     if (localStorageData) {
-  //       setProducts(localStorageData);
-  //     } else {
-  //       const data = await fetch("./products.json").then((res) => res.json());
-  //       setProducts(data);
-  //       addToLocalStorage("products", data);
-  //     }
-  //   } catch(error) {
-  //     setError(error.message);
-  //   } 
-  // };
-
-  const getProducts = async () => {
-    try {
-          const localStorageData = getFromLocalStorage("products");
-
-          if (localStorageData) {
-            setProducts(localStorageData);
-          } else {
-            const { data } = await axios.get(MAIN_URL);
-            console.log(data);
-            setProducts(data);
-            addToLocalStorage("products", data);
-          }
-        } catch(error) {
-          setError(error.message);
-        } 
-  }
-
   useEffect(() => {
-    getProducts();
-  }, []);
-
-  useEffect(() => {
-    if (products.length) {
-      addToLocalStorage("products", products);
-    }
-  }, [products]);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   useEffect(() => {
     const storedCart = getFromLocalStorage('cart');

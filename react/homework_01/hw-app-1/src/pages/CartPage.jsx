@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CartContainer from "../components/CartContainer";
 import Modal from '../components/Modal';
 import modalStyles from "../components/Modal/Modal.module.scss";
