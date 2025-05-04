@@ -122,10 +122,6 @@ function App() {
                     setSecondModalOpen={(value) => dispatch(value ? openSecondModal() : closeSecondModal())}
                     selectedItem={selectedItem}
                     setSelectedItem={setSelectedItem}
-                    // setCartCount={setCartCount}
-                    // setFavoriteCount={setFavoriteCount}
-                    // cartCount={cartCount}
-                    // favoriteCount={favoriteCount}
         >     
         </AppRoutes>
       </main>
