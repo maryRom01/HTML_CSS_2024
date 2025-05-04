@@ -34,9 +34,9 @@ function ProductCard({ id, title, price, image, isFirstModalOpen, setFirstModalO
     };
 
     const handleAddToCartClick = () => {
-        setSecondModalOpen(true); 
         addItemToCart({ id, title, price, image, count: 1 });
         addToLocalStorage('cart', cart);
+        setSecondModalOpen(true);
     };
 
     return (
