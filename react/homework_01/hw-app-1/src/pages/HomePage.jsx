@@ -1,16 +1,14 @@
 import ProductList from "../components/ProductList";
 
-const HomePage = ({ products = [], setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, favorite, updateFavorite }) => {
+const HomePage = ({ products = [], favorite = [], isFirstModalOpen, setFirstModalOpen, setSecondModalOpen }) => {
 
     return (
         <ProductList 
-                data={products} 
-                setSecondModalOpen={setSecondModalOpen}
-                setCartCount={setCartCount}
-                setFavoriteCount={setFavoriteCount}
-                updateCart={updateCart}
+                products={products} 
                 favorite={favorite}
-                updateFavorite={updateFavorite}
+                isFirstModalOpen={isFirstModalOpen}
+                setFirstModalOpen={setFirstModalOpen}
+                setSecondModalOpen={setSecondModalOpen}
               >
         </ProductList>
     )

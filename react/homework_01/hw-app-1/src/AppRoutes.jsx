@@ -1,40 +1,24 @@
-import { Routes, Route, Navigate } from "react-router";
+import { Routes, Route } from "react-router";
+import { useDispatch } from 'react-redux';
 import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import FavoritePage from './pages/FavoritePage';
 
-const AppRoutes = ({
-    data = [],
-    isFirstModalOpen,
-    setFirstModalOpen,
-    setSecondModalOpen,
-    selectedItem,
-    setSelectedItem,
-    setCartCount,
-    setFavoriteCount,
-    cart = [],
-    updateCart = () => {},
-    favorite = [],
-    updateFavorite = () => {}
-}) => {
+const AppRoutes = ({ products, cart, favorite, isFirstModalOpen, setFirstModalOpen, setSecondModalOpen, selectedItem, setSelectedItem }) => {
+
     return (
         <Routes>
-            <Route path='/' element={ <HomePage products={data} 
-                                                setSecondModalOpen={setSecondModalOpen}
-                                                setCartCount={setCartCount}
-                                                setFavoriteCount={setFavoriteCount}
-                                                updateCart={updateCart}
+            <Route path='/' element={ <HomePage products={products} 
+                                                cart={cart}
                                                 favorite={favorite}
-                                                updateFavorite={updateFavorite}
+                                                isFirstModalOpen={isFirstModalOpen}
+                                                setFirstModalOpen={setFirstModalOpen}
+                                                setSecondModalOpen={setSecondModalOpen}
                                     /> } 
             />
             <Route path='/cart' element={ <CartPage cart={cart} 
-                                                    isFirstModalOpen={isFirstModalOpen}
-                                                    setFirstModalOpen={setFirstModalOpen} 
                                                     selectedItem={selectedItem}
                                                     setSelectedItem={setSelectedItem}
-                                                    updateCart={updateCart}
-                                                    setCartCount={setCartCount}
                                         />} 
             />                                   
             <Route path='/favorite' element={ <FavoritePage favorite={favorite} 
@@ -43,6 +27,7 @@ const AppRoutes = ({
             <Route path='*' element={<h1>Page not found</h1>} />
         </Routes>
     )
-}
+};
+   
 
 export default AppRoutes;

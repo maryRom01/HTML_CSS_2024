@@ -5,7 +5,6 @@ import styles from './CartContainer.module.scss';
 
 const CartContainer = ({ 
     cartItems = [],
-    setFirstModalOpen,
     setSelectedItem
 }) => {
     const cartSum = cartItems.reduce((acc, el) => {
@@ -22,8 +21,8 @@ const CartContainer = ({
         <div className={styles.cartContainer}>
             <h2 className={styles.heading}>Cart </h2>
             <div className={styles.contextContainer}>
-                <div className={styles.context}>Sum: <span className={styles.text}>{Number(cartSum).toFixed(2)}</span></div>
-                <div className={styles.context}>Quantity: <span className={styles.text}>{items}</span></div>
+                <div className={styles.context}>Sum: <span className={styles.text}></span></div>
+                <div className={styles.context}>Quantity: <span className={styles.text}></span></div>
             </div>
             {cartItems.length > 0 ? (
                 cartItems.map((item) => (
@@ -34,7 +33,6 @@ const CartContainer = ({
                         price={item.price}
                         image={item.image}
                         count={item.count}
-                        setFirstModalOpen={setFirstModalOpen} 
                         setSelectedItem={setSelectedItem}
                     />
                 ))
