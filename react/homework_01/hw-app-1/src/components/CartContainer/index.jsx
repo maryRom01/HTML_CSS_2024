@@ -30,7 +30,7 @@ const CartContainer = ({
                     <CartItem
                         key={item.id}
                         id={item.id}
-                        name={item.name}
+                        title={item.title}
                         price={item.price}
                         image={item.image}
                         count={item.count}
@@ -49,7 +49,7 @@ CartContainer.propTypes = {
     cartItems: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
         })
     ).isRequired,
 };

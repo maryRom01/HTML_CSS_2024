@@ -10,7 +10,7 @@ function Header({ children='', cartCount, favoritesCount }) {
                 <Link to='/'>
                     <div className={styles.iconWrapper}>
                         <img
-                            src="/images/logo.svg"
+                            src="/images/onlineshop.svg"
                             alt="favourite"
                             className={styles.logo}
                         />

@@ -5,7 +5,7 @@ import Button from '../Button';
 import PropTypes from 'prop-types';
 import { addToLocalStorage, removeItemFromLocalStorageFavorite } from '../../utils/localStorage';
 
-function ProductCard({ id, name, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, favorite, updateFavorite }) {
+function ProductCard({ id, title, price, image, producer, packageSize, setSecondModalOpen, setCartCount, setFavoriteCount, updateCart, favorite, updateFavorite }) {
     const [liked, setLiked] = useState(false);
 
     useEffect(() => {
@@ -55,7 +55,7 @@ function ProductCard({ id, name, price, image, producer, packageSize, setSecondM
         setLiked(isLiking); 
         setFavoriteCount(prev => prev + (liked ? -1 : 1));
         if (isLiking) {
-            addItemToFavorite({ id, name, price, image });
+            addItemToFavorite({ id, title, price, image });
         } else {
             removeItemFromFavorite(id);
         }
@@ -64,14 +64,14 @@ function ProductCard({ id, name, price, image, producer, packageSize, setSecondM
     const handleAddToCartClick = () => {
         setSecondModalOpen(true); 
         setCartCount(prev => prev + 1);
-        addItemToCart({ id, name, price, image });
+        addItemToCart({ id, title, price, image });
     };
 
     return (
         <>
             <div className={styles.card}>
                 <div className={styles.imageWrapper}>
-                    <img src={image} alt={name} />
+                    <img src={image} alt={title} />
                     <button
                         className={`${styles.starBtn} ${liked ? styles.liked : ''}`} 
                         onClick={handleLikeClick}
@@ -79,7 +79,7 @@ function ProductCard({ id, name, price, image, producer, packageSize, setSecondM
                         <FaStar />
                     </button>
                 </div>
-                <h3 className={styles.name}>{name} №{packageSize}</h3>
+                <h3 className={styles.name}>{title.length > 15 ? title.slice(0, 15) + '...' : title}</h3>
                 <p><strong>Ціна:</strong> {price.toFixed(2)} грн</p>
                 <p className={styles.producer}>{producer}</p>
                 <Button className={styles.btn} type="default" onClick={handleAddToCartClick} classNames="first">
@@ -91,7 +91,7 @@ function ProductCard({ id, name, price, image, producer, packageSize, setSecondM
 }
 
 ProductCard.propTypes = {
-    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     producer: PropTypes.string.isRequired,

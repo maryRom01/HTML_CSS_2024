@@ -63,3 +63,9 @@ p:last-of-type {
     color: gray;
 }
 
+.name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    max-width: 100%;
+}

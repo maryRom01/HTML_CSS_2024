@@ -8,11 +8,11 @@ function ProductList({ data, setSecondModalOpen, setCartCount, setFavoriteCount,
     return (
             <>
                 <main className={styles.product_list}>
-                    {data.map(({ id, name, price, image, producer, package: packageSize }) => (
+                    {data.map(({ id, title, price, image, producer, package: packageSize }) => (
                         <ProductCard
                             key={id}
                             id={id}
-                            name={name}
+                            title={title}
                             price={price}
                             image={image}
                             producer={producer}

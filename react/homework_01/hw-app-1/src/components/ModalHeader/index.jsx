@@ -11,7 +11,7 @@ function ModalHeader({ onClose, image, image2, children }) {
         <h2 className={styles.header}>{children}</h2>
         {image2 && (
           <div className={styles.pills}>
-            <img src={`${image2}`} alt='pills'></img>
+            <img src={`${image2}`} alt='product'></img>
           </div>
         )}
       </div>

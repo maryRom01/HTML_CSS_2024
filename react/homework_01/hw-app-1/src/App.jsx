@@ -6,8 +6,10 @@ import AppRoutes from './AppRoutes';
 import { addToLocalStorage, getFromLocalStorage } from './utils/localStorage';
 import modalStyles from "./components/Modal/Modal.module.scss";
 import { useImmer } from "use-immer";
+import axios from 'axios';
 
 function App() {
+  const MAIN_URL = 'https://fakestoreapi.com/products/';
   const [products, setProducts] = useState([]);
   const [isFirstModalOpen, setFirstModalOpen] = useState(false);
   const [isSecondModalOpen, setSecondModalOpen] = useState(false);
@@ -18,21 +20,38 @@ function App() {
   const [cart, updateCart] = useImmer([]);
   const [favorite, updateFavorite] = useImmer([]);
 
+  // const getProducts = async () => {
+  //   try {
+  //     const localStorageData = getFromLocalStorage("products");
+
+  //     if (localStorageData) {
+  //       setProducts(localStorageData);
+  //     } else {
+  //       const data = await fetch("./products.json").then((res) => res.json());
+  //       setProducts(data);
+  //       addToLocalStorage("products", data);
+  //     }
+  //   } catch(error) {
+  //     setError(error.message);
+  //   } 
+  // };
+
   const getProducts = async () => {
     try {
-      const localStorageData = getFromLocalStorage("products");
+          const localStorageData = getFromLocalStorage("products");
 
-      if (localStorageData) {
-        setProducts(localStorageData);
-      } else {
-        const data = await fetch("./products.json").then((res) => res.json());
-        setProducts(data);
-        addToLocalStorage("products", data);
-      }
-    } catch(error) {
-      setError(error.message);
-    } 
-  };
+          if (localStorageData) {
+            setProducts(localStorageData);
+          } else {
+            const { data } = await axios.get(MAIN_URL);
+            console.log(data);
+            setProducts(data);
+            addToLocalStorage("products", data);
+          }
+        } catch(error) {
+          setError(error.message);
+        } 
+  }
 
   useEffect(() => {
     getProducts();
@@ -100,7 +119,7 @@ function App() {
         cartCount = {cartCount}
         favoritesCount = {favoriteCount}
       >
-        Pharmacy
+        Store
       </Header>
       <main>
         <AppRoutes  data={products} 
@@ -126,7 +145,7 @@ function App() {
                 isOpen = {isSecondModalOpen}
                 onClose = {() => setSecondModalOpen(false)}
                 header = '' 
-                image2 = '/images/pills.png'
+                image2 = '/images/product.png'
                 body = "The product added to the cart"
                 firstText = 'Ok' firstClick={() => console.log("Add to cart clicked")}
             >

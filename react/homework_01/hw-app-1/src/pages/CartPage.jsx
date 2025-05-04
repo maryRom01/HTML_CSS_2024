@@ -46,15 +46,13 @@ const CartPage = ({
                     type="image" 
                     isOpen={isFirstModalOpen} 
                     onClose={() => setFirstModalOpen(false)} 
-                    header={`${selectedItem.name} - ${Number(selectedItem.price).toFixed(2)}`}
-                    body={`${selectedItem.name} will be deleted.`}
+                    header={`${selectedItem.title.length > 10 ? selectedItem.title.slice(0, 10) + '...' : selectedItem.title} - ${Number(selectedItem.price).toFixed(2)}`}
+                    body={`${selectedItem.title.length > 30 ? selectedItem.title.slice(0, 30) + '...' : selectedItem.title} will be deleted.`}
                     firstText="No, Cancel"  
                     secondText="Yes, delete" 
                     firstClick={() => setFirstModalOpen(false)} 
                     secondClick={() => 
                         {
-                            console.log(selectedItem.id);
-                            console.log(selectedItem.name);
                             removeItemFromCart(selectedItem.id);
                             setFirstModalOpen(false);
                         }

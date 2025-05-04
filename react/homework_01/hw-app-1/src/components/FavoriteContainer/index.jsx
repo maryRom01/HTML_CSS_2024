@@ -15,7 +15,7 @@ const FavoriteContainer = ({
                     <FavoriteItem
                         key={item.id}
                         id={item.id}
-                        name={item.name}
+                        title={item.title}
                         price={item.price}
                         image={item.image}
                     />
@@ -31,7 +31,7 @@ FavoriteContainer.propTypes = {
     favorite: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
         })
     ).isRequired,
 };
