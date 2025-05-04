@@ -23,13 +23,8 @@ function App() {
   const isSecondModalOpen = useSelector((state) => state.modal.isSecondModalOpen);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // const [isFirstModalOpen, setFirstModalOpen] = useState(false);
-  // const [isSecondModalOpen, setSecondModalOpen] = useState(false);
-  // const [selectedItem, setSelectedItem] = useState(null);
-  // const [cartCount, setCartCount] = useState(0);
-  // const [favoriteCount, setFavoriteCount] = useState(0);
-  // const [cart, updateCart] = useImmer([]);
-  // const [favorite, updateFavorite] = useImmer([]);
+  const [cartCount, setCartCount] = useState(0);
+  const [favoriteCount, setFavoriteCount] = useState(0);
 
   useEffect(() => {
     dispatch(fetchProducts());

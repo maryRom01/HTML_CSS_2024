@@ -21,8 +21,8 @@ const CartContainer = ({
         <div className={styles.cartContainer}>
             <h2 className={styles.heading}>Cart </h2>
             <div className={styles.contextContainer}>
-                <div className={styles.context}>Sum: <span className={styles.text}></span></div>
-                <div className={styles.context}>Quantity: <span className={styles.text}></span></div>
+                <div className={styles.context}>Sum: <span className={styles.text}>{cartSum.toFixed(2)}</span></div>
+                <div className={styles.context}>Quantity: <span className={styles.text}>{items}</span></div>
             </div>
             {cartItems.length > 0 ? (
                 cartItems.map((item) => (

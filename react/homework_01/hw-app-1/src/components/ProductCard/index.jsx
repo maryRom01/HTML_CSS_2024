@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { addToFavorite, removeFromFavorite } from '../../slices/favoriteSlice';
 import { addToCart } from '../../slices/cartSlice';
+import { addToLocalStorage } from '../../utils/localStorage';
 
 function ProductCard({ id, title, price, image, isFirstModalOpen, setFirstModalOpen, setSecondModalOpen }) {
     const dispatch = useDispatch();
@@ -34,7 +35,8 @@ function ProductCard({ id, title, price, image, isFirstModalOpen, setFirstModalO
 
     const handleAddToCartClick = () => {
         setSecondModalOpen(true); 
-        addItemToCart({ id, title, price, image });
+        addItemToCart({ id, title, price, image, count: 1 });
+        addToLocalStorage('cart', cart);
     };
 
     return (
